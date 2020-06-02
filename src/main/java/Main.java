@@ -9,6 +9,8 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
+    public static final String API_KEY = "AIzaSyCYQD1XmjtckUH2siHQihtV6GVzzJRrvd4";
+
     public static Stage mainStage;
 
     private double xOffset = 0;

@@ -1,5 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -16,6 +17,18 @@ public class MyBooksController {
 
     @FXML
     private AnchorPane readPane;
+
+    @FXML
+    private Label totalAllBooksCounter;
+
+    @FXML
+    private Label wantToReadCounter;
+
+    @FXML
+    private Label readingCounter;
+
+    @FXML
+    private Label readCounter;
 
     public void closeAction(MouseEvent mouseEvent) {
         System.exit(0);
