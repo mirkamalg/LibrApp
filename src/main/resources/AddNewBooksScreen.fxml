@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="567.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddNewBook">
+   <children>
+      <HBox alignment="CENTER" layoutY="121.0" prefHeight="111.0" prefWidth="900.0" style="-fx-background-color: #e1f5fe;">
+         <children>
+            <Label text="Add a new book">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="450.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <ImageView fx:id="coverImageView" fitHeight="189.0" fitWidth="149.0" layoutX="30.0" layoutY="43.0" pickOnBounds="true">
+         <image>
+            <Image url="@Pics/question-mark.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="293.0" prefHeight="189.0" prefWidth="353.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="308.0">
+               <children>
+                  <Label text="Book name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookNameTextField" prefHeight="31.0" prefWidth="204.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="322.0">
+               <children>
+                  <Label text="Author name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="authorNameTextField1" prefHeight="31.0" prefWidth="204.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="334.0">
+               <children>
+                  <Label text="Author name 2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="authorNameTextField11" prefHeight="31.0" prefWidth="204.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="334.0">
+               <children>
+                  <Label text="Page count">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="pageCountTextField" prefHeight="31.0" prefWidth="95.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <CheckBox fx:id="detailsCheckBox" layoutX="444.0" layoutY="247.0" mnemonicParsing="false" onAction="#detailsAction" text="Details">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </CheckBox>
+      <VBox layoutX="444.0" layoutY="284.0" prefHeight="271.0" prefWidth="428.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="428.0">
+               <children>
+                  <Label text="Publisher">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="publisherTextField" prefHeight="31.0" prefWidth="235.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="428.0">
+               <children>
+                  <Label text="Publish date">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="publishDateTextField" prefHeight="31.0" prefWidth="235.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="428.0">
+               <children>
+                  <Label text="Description">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="descriptionTextField" prefHeight="31.0" prefWidth="235.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="428.0">
+               <children>
+                  <Label text="Language">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="languageTextField" prefHeight="31.0" prefWidth="235.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="428.0">
+               <children>
+                  <Label text="Categories">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="categoriesTextField" prefHeight="31.0" prefWidth="235.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <CheckBox fx:id="matureContentCheckBox" mnemonicParsing="false" text="Has mature content">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </VBox>
+      <Button fx:id="addButton" layoutX="151.0" layoutY="511.0" mnemonicParsing="false" onAction="#addAction" text="Add">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="844.0" layoutY="44.0" onMouseClicked="#closeAction" size="35" />
+   </children>
+</AnchorPane>

@@ -4,6 +4,8 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
+
 public class MyBooksController {
 
     @FXML
@@ -50,7 +52,7 @@ public class MyBooksController {
 
     }
 
-    public void addNewBookAction(ActionEvent actionEvent) {
-
+    public void addNewBookAction(ActionEvent actionEvent) throws IOException {
+        AddNewBook.initializeAddNewNoteScreen();
     }
 }
