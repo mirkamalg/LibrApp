@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClassName = "Main"
+}
+
+group 'com.mirkamal'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'de.jensd:fontawesomefx:8.9'
+}

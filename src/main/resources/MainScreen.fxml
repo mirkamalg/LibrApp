@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+   <children>
+      <AnchorPane fx:id="navBarAnchorPane" prefHeight="720.0" prefWidth="319.0" style="-fx-background-color: #e1f5fe;">
+         <children>
+            <HBox alignment="CENTER" layoutX="25.0" layoutY="94.0" prefHeight="100.0" prefWidth="236.0">
+               <children>
+                  <ImageView fitHeight="99.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Pics/librarylogo.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="LibrApp">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Rockwell" size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox layoutX="21.0" layoutY="248.0" prefHeight="210.0" prefWidth="277.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="217.0">
+                     <children>
+                        <FontAwesomeIconView fx:id="myBooksIcon" glyphName="BOOK" onMouseClicked="#myBooksAction" size="35" />
+                        <Label fx:id="myBooksLabel" onMouseClicked="#myBooksAction" text="My books">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="236.0">
+                     <children>
+                        <FontAwesomeIconView fx:id="bookshelvesIcon" glyphName="BOOKMARK" onMouseClicked="#bookshelvesAction" size="35" />
+                        <Label fx:id="bookshelvesLabel" onMouseClicked="#bookshelvesAction" prefHeight="53.0" prefWidth="205.0" text="Bookshelves">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="157.0">
+                     <children>
+                        <FontAwesomeIconView fx:id="searchIcon" glyphName="SEARCH" onMouseClicked="#searchAction" size="35" />
+                        <Label fx:id="searchLabel" onMouseClicked="#searchAction" text="Search">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="148.0">
+                     <children>
+                        <FontAwesomeIconView fx:id="aboutIcon" glyphName="INFO_CIRCLE" onMouseClicked="#aboutAction" size="35" />
+                        <Label fx:id="aboutLabel" onMouseClicked="#aboutAction" text="About">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="contentPane" layoutX="319.0" layoutY="-8.0" prefHeight="728.0" prefWidth="963.0" style="-fx-background-color: white;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+.roundedCard1 {
+    -fx-background-color : #e6ee9c;
+    -fx-background-radius :  25 25 25 25;
+}
+
+.roundedCard2 {
+    -fx-background-color :  #a5d6a7;
+    -fx-background-radius :  25 25 25 25;
+}
+
+.roundedCard3 {
+    -fx-background-color : #80deea;
+    -fx-background-radius :  25 25 25 25;
+}
+
+.roundedCard4 {
+    -fx-background-color :  #90caf9;
+    -fx-background-radius :  25 25 25 25;
+}

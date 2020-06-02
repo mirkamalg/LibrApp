@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="myBooksPane" prefHeight="728.0" prefWidth="963.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyBooksController">
+   <children>
+      <GridPane alignment="CENTER" hgap="30.0" layoutX="13.0" layoutY="183.0" prefHeight="531.0" prefWidth="920.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="274.0" minHeight="10.0" prefHeight="274.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="267.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#allBooksAction" prefHeight="242.0" prefWidth="460.0" style="-fx-background-color: #e6ee9c; -fx-background-radius: 25 25 25 25;">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="242.0" prefWidth="460.0">
+                     <children>
+                        <Label text="All books">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalAllBooksCounter" text="Total: 0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#wantToReadAction" prefHeight="242.0" prefWidth="460.0" style="-fx-background-color: #a5d6a7; -fx-background-radius: 25 25 25 25;" GridPane.columnIndex="1">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="242.0" prefWidth="460.0">
+                     <children>
+                        <Label text="Want to read">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="wantToReadCounter" text="Total: 0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#readingAction" prefHeight="242.0" prefWidth="460.0" style="-fx-background-color: #80deea; -fx-background-radius: 25 25 25 25;" GridPane.rowIndex="1">
+               <children>
+                  <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="242.0" prefWidth="460.0">
+                     <children>
+                        <Label text="Reading">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="readingCounter" text="Total: 0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#readAction" prefHeight="242.0" prefWidth="460.0" style="-fx-background-color: #90caf9; -fx-background-radius: 25 25 25 25;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="242.0" prefWidth="460.0">
+                     <children>
+                        <Label text="Read">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="readCounter" text="Total: 0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="912.0" layoutY="39.0" onMouseClicked="#closeAction" size="35" />
+      <HBox layoutY="70.0" prefHeight="100.0" prefWidth="963.0" style="-fx-background-color: #e1f5fe;">
+         <children>
+            <Label text="My books">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="addNewBookButton" mnemonicParsing="false" onAction="#addNewBookAction" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffe0b2;" text="Add new book">
+               <HBox.margin>
+                  <Insets left="500.0" top="35.0" />
+               </HBox.margin>
+               <graphic>
+                  <FontAwesomeIconView glyphName="PLUS" size="15" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
