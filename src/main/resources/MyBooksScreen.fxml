@@ -63,7 +63,7 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="242.0" prefWidth="460.0">
                      <children>
-                        <Label text="Read">
+                        <Label text="Have read">
                            <font>
                               <Font size="48.0" />
                            </font>
@@ -75,7 +75,7 @@
             </AnchorPane>
          </children>
       </GridPane>
-      <FontAwesomeIconView glyphName="CLOSE" layoutX="912.0" layoutY="39.0" onMouseClicked="#closeAction" size="35" />
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="912.0" layoutY="46.0" onMouseClicked="#closeAction" size="35" />
       <HBox layoutY="70.0" prefHeight="100.0" prefWidth="963.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, #ffffe4);">
          <children>
             <Label text="My books">

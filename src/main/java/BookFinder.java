@@ -93,13 +93,15 @@ public class BookFinder {
             }
 
             String categoriesString;
-            String[] categories;
+            String[] categoriesArray;
+            String categories;
             if ((( (Map) ((Map) k).get("volumeInfo")).containsKey("categories"))) {
                 categoriesString = ((Map) ((Map) k).get("volumeInfo")).get("categories").toString();
                 categoriesString = categoriesString.replaceAll("\\[", "").replaceAll("]","");
-                categories = categoriesString.split(", ");
+                categoriesArray = categoriesString.split(", ");
+                categories = String.join(", ", categoriesArray);
             } else {
-                categories = new String[] {"?"};
+                categories = "?";
             }
 
             double averageRating;
@@ -109,11 +111,15 @@ public class BookFinder {
                 averageRating = 0;
             }
 
-            boolean hasMatureContent;
+            int hasMatureContent;
             if ((( (Map) ((Map) k).get("volumeInfo")).containsKey("averageRating"))) {
-                hasMatureContent = !((Map) ((Map) k).get("volumeInfo")).get("maturityRating").toString().equals("NOT_MATURE");
+                if (!((Map) ((Map) k).get("volumeInfo")).get("maturityRating").toString().equals("NOT_MATURE")) {
+                    hasMatureContent = 1;
+                }else {
+                    hasMatureContent = 0;
+                }
             } else {
-                hasMatureContent = true;
+                hasMatureContent = 0;
             }
 
             Map<String, String> images;
@@ -138,7 +144,12 @@ public class BookFinder {
                 googleLink = "?";
             }
 
-            Book book = new Book(id, title, publisher, publishDate, description, language, googleLink, pageCount, averageRating, hasMatureContent, authors, categories, images);
+            Book book = null;
+            try {
+                book = new Book(id, title, publisher, publishDate, description, language, googleLink, pageCount, averageRating, hasMatureContent, authors, categories, images);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             books.add(book);
         });

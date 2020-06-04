@@ -35,7 +35,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="bookNameTextField" prefHeight="31.0" prefWidth="280.0">
+                  <TextField fx:id="bookTitleTextField" prefHeight="31.0" prefWidth="280.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -49,7 +49,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="authorNameTextField1" prefHeight="31.0" prefWidth="265.0">
+                  <TextField fx:id="authorNameTextField" prefHeight="31.0" prefWidth="265.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -63,7 +63,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="authorNameTextField11" prefHeight="31.0" prefWidth="250.0">
+                  <TextField fx:id="authorNameTextField1" prefHeight="31.0" prefWidth="250.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -170,7 +170,7 @@
             </CheckBox>
          </children>
       </VBox>
-      <Button fx:id="addButton" layoutX="151.0" layoutY="511.0" mnemonicParsing="false" onAction="#addAction" text="Add">
+      <Button fx:id="addButton" layoutX="151.0" layoutY="511.0" mnemonicParsing="false" onAction="#addAction" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #e1f5fe;" text="Add">
          <font>
             <Font size="18.0" />
          </font>

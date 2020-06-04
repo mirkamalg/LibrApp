@@ -36,8 +36,8 @@ public class MyBooksController {
         System.exit(0);
     }
 
-    public void allBooksAction(MouseEvent mouseEvent) {
-
+    public void allBooksAction(MouseEvent mouseEvent) throws IOException {
+        AllBooks.initializeAllBooksScreen();
     }
 
     public void wantToReadAction(MouseEvent mouseEvent) {

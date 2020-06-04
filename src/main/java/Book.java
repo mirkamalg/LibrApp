@@ -1,15 +1,19 @@
+import javafx.scene.image.Image;
+
+import java.io.IOException;
 import java.util.Map;
 
 public class Book {
 
-    private String googleID, title, publisher, publishDate, description, language, googleBooksInfoURL;
+    private String googleID, title, publisher, publishDate, description, language, googleBooksInfoURL, categories;
     private int pageCount;
     private double averageRating;
-    private boolean hasMatureContent;
-    private String[] authors, categories;
+    private int hasMatureContent;
+    private String[] authors;
     private Map<String, String> images;
+    private Image CoverImage;
 
-    public Book(String googleID, String title, String publisher, String publishDate, String description, String language, String googleBooksInfoURL, int pageCount, double averageRating, boolean hasMatureContent, String[] authors, String[] categories, Map<String, String> images) {
+    public Book(String googleID, String title, String publisher, String publishDate, String description, String language, String googleBooksInfoURL, int pageCount, double averageRating, int hasMatureContent, String[] authors, String categories, Map<String, String> images) throws IOException {
         this.googleID = googleID;
         this.title = title;
         this.publisher = publisher;
@@ -22,7 +26,21 @@ public class Book {
         this.hasMatureContent = hasMatureContent;
         this.authors = authors;
         this.categories = categories;
-        this.images = images;
+
+        if (googleID.equals("none")) {
+            setCoverImage(new Image("Pics/question-mark.png"));
+        } else {
+            Image image = new Image(images.get("thumbnail"));
+            setCoverImage(image);
+        }
+    }
+
+    public Image getCoverImage() {
+        return CoverImage;
+    }
+
+    public void setCoverImage(Image coverImage) {
+        CoverImage = coverImage;
     }
 
     public String getGoogleID() {
@@ -97,11 +115,11 @@ public class Book {
         this.averageRating = averageRating;
     }
 
-    public boolean isHasMatureContent() {
+    public int HasMatureContent() {
         return hasMatureContent;
     }
 
-    public void setHasMatureContent(boolean hasMatureContent) {
+    public void setMatureContent(int hasMatureContent) {
         this.hasMatureContent = hasMatureContent;
     }
 
@@ -113,11 +131,11 @@ public class Book {
         this.authors = authors;
     }
 
-    public String[] getCategories() {
+    public String getCategories() {
         return categories;
     }
 
-    public void setCategories(String[] categories) {
+    public void setCategories(String categories) {
         this.categories = categories;
     }
 

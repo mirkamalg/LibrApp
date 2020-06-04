@@ -17,4 +17,5 @@ repositories {
 dependencies {
     compile 'de.jensd:fontawesomefx:8.9'
     compile 'com.google.code.gson:gson:2.8.6'
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.8.11.1'
 }

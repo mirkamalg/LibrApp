@@ -46,7 +46,7 @@ public class MainController implements Initializable {
     @FXML
     private Pane contentPane;
 
-    private TransitionHandler handler = new TransitionHandler();
+    private final TransitionHandler handler = new TransitionHandler();
 
     public void myBooksAction(MouseEvent mouseEvent) {
         Pane loadedPane = handler.changePane("MyBooksScreen");
