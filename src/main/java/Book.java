@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 
 public class Book {
 
@@ -7,10 +6,10 @@ public class Book {
     private int pageCount;
     private double averageRating;
     private boolean hasMatureContent;
-    private ArrayList<String> authors, categories;
-    private HashMap<String, String> images;
+    private String[] authors, categories;
+    private Map<String, String> images;
 
-    public Book(String googleID, String title, String publisher, String publishDate, String description, String language, String googleBooksInfoURL, int pageCount, double averageRating, boolean hasMatureContent, ArrayList<String> authors, ArrayList<String> categories, HashMap<String, String> images) {
+    public Book(String googleID, String title, String publisher, String publishDate, String description, String language, String googleBooksInfoURL, int pageCount, double averageRating, boolean hasMatureContent, String[] authors, String[] categories, Map<String, String> images) {
         this.googleID = googleID;
         this.title = title;
         this.publisher = publisher;
@@ -106,27 +105,27 @@ public class Book {
         this.hasMatureContent = hasMatureContent;
     }
 
-    public ArrayList<String> getAuthors() {
+    public String[] getAuthors() {
         return authors;
     }
 
-    public void setAuthors(ArrayList<String> authors) {
+    public void setAuthors(String[] authors) {
         this.authors = authors;
     }
 
-    public ArrayList<String> getCategories() {
+    public String[] getCategories() {
         return categories;
     }
 
-    public void setCategories(ArrayList<String> categories) {
+    public void setCategories(String[] categories) {
         this.categories = categories;
     }
 
-    public HashMap<String, String> getImages() {
+    public Map<String, String> getImages() {
         return images;
     }
 
-    public void setImages(HashMap<String, String> images) {
+    public void setImages(Map<String, String> images) {
         this.images = images;
     }
 }

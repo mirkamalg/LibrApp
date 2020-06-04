@@ -9,7 +9,7 @@
 <?import javafx.scene.text.*?>
 <AnchorPane prefHeight="567.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddNewBook">
    <children>
-      <HBox alignment="CENTER" layoutY="121.0" prefHeight="111.0" prefWidth="900.0" style="-fx-background-color: #e1f5fe;">
+      <HBox alignment="CENTER" layoutY="121.0" prefHeight="111.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, transparent);">
          <children>
             <Label text="Add a new book">
                <font>
@@ -26,7 +26,7 @@
             <Image url="@Pics/question-mark.png" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="293.0" prefHeight="189.0" prefWidth="353.0">
+      <VBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="293.0" prefHeight="189.0" prefWidth="393.0">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="308.0">
                <children>
@@ -35,7 +35,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="bookNameTextField" prefHeight="31.0" prefWidth="204.0">
+                  <TextField fx:id="bookNameTextField" prefHeight="31.0" prefWidth="280.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -49,7 +49,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="authorNameTextField1" prefHeight="31.0" prefWidth="204.0">
+                  <TextField fx:id="authorNameTextField1" prefHeight="31.0" prefWidth="265.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -63,7 +63,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="authorNameTextField11" prefHeight="31.0" prefWidth="204.0">
+                  <TextField fx:id="authorNameTextField11" prefHeight="31.0" prefWidth="250.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -77,7 +77,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="pageCountTextField" prefHeight="31.0" prefWidth="95.0">
+                  <TextField fx:id="pageCountTextField" prefHeight="31.0" prefWidth="280.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -91,7 +91,7 @@
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <VBox layoutX="444.0" layoutY="284.0" prefHeight="271.0" prefWidth="428.0">
+      <VBox fx:id="detailsVBox" disable="true" layoutX="444.0" layoutY="284.0" prefHeight="271.0" prefWidth="428.0">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="428.0">
                <children>
@@ -100,7 +100,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="publisherTextField" prefHeight="31.0" prefWidth="235.0">
+                  <TextField fx:id="publisherTextField" prefHeight="31.0" prefWidth="345.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -114,7 +114,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="publishDateTextField" prefHeight="31.0" prefWidth="235.0">
+                  <TextField fx:id="publishDateTextField" prefHeight="31.0" prefWidth="320.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -128,7 +128,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="descriptionTextField" prefHeight="31.0" prefWidth="235.0">
+                  <TextField fx:id="descriptionTextField" prefHeight="31.0" prefWidth="327.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -142,7 +142,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="languageTextField" prefHeight="31.0" prefWidth="235.0">
+                  <TextField fx:id="languageTextField" prefHeight="31.0" prefWidth="340.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -156,7 +156,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="categoriesTextField" prefHeight="31.0" prefWidth="235.0">
+                  <TextField fx:id="categoriesTextField" prefHeight="31.0" prefWidth="333.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>

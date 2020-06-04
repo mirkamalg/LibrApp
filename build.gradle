@@ -16,4 +16,5 @@ repositories {
 
 dependencies {
     compile 'de.jensd:fontawesomefx:8.9'
+    compile 'com.google.code.gson:gson:2.8.6'
 }
