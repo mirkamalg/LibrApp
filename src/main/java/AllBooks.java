@@ -40,7 +40,6 @@ public class AllBooks implements Initializable {
 
         stage.setScene(allBooksScene);
         stage.showAndWait();
-        AddNewBook.selectedFile = null;
     }
 
     @Override
@@ -54,6 +53,11 @@ public class AllBooks implements Initializable {
 
     public void closeAction(MouseEvent mouseEvent) {
         stage.close();
+    }
+
+    public void viewBookAction(MouseEvent mouseEvent) throws IOException {
+        ViewBookInfo viewBookInfo = new ViewBookInfo();
+        viewBookInfo.initializeBookInfoScreen(DataHandler.getBooks().get(allBooksListView.getSelectionModel().getSelectedItem()));
     }
 
     static class CustomCell extends ListCell<String> {

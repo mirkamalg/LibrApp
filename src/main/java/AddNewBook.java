@@ -89,11 +89,17 @@ public class AddNewBook {
     }
 
     public void addAction(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
-        if (!bookTitleTextField.getText().isEmpty() && !authorNameTextField.getText().isEmpty() && !authorNameTextField1.getText().isEmpty() && !pageCountTextField.getText().isEmpty()) {
+        if (!bookTitleTextField.getText().isEmpty() && !authorNameTextField.getText().isEmpty() && !pageCountTextField.getText().isEmpty()) {
             String bookTitle = bookTitleTextField.getText();
 
             String authorOne = authorNameTextField.getText();
-            String authorTwo = authorNameTextField1.getText();
+            String authorTwo;
+            if (authorNameTextField1.getText().isEmpty()) {
+                authorTwo = "?";
+            } else {
+                authorTwo = authorNameTextField1.getText();
+            }
+
             String[] authors = new String[] {authorOne, authorTwo};
 
             int pageCount;
@@ -115,11 +121,35 @@ public class AddNewBook {
             int hasMatureContent;  // 0 is false and 1 is true
 
             if (detailsCheckBox.isSelected()) {
-                publisher = publisherTextField.getText();
-                publishDate = publishDateTextField.getText();
-                description = descriptionTextField.getText();
-                language = languageTextField.getText();
-                categories = categoriesTextField.getText();
+                if (publisherTextField.getText().isEmpty()) {
+                    publisher = "?";
+                } else {
+                    publisher = publisherTextField.getText();
+                }
+
+                if (publishDateTextField.getText().isEmpty()) {
+                    publishDate = "?";
+                } else{
+                    publishDate = publishDateTextField.getText();
+                }
+
+                if (descriptionTextField.getText().isEmpty()) {
+                    description = "?";
+                } else {
+                    description = descriptionTextField.getText();
+                }
+
+                if (languageTextField.getText().isEmpty()) {
+                    language = "?";
+                } else {
+                    language = languageTextField.getText();
+                }
+
+                if (categoriesTextField.getText().isEmpty()) {
+                    categories = "?";
+                } else {
+                    categories = categoriesTextField.getText();
+                }
 
                 if (matureContentCheckBox.isSelected()) {
                     hasMatureContent = 1;

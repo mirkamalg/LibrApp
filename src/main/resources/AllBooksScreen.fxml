@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -17,7 +16,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <ListView fx:id="allBooksListView" layoutX="28.0" layoutY="177.0" prefHeight="464.0" prefWidth="770.0" />
+      <ListView fx:id="allBooksListView" layoutX="28.0" layoutY="177.0" onMouseClicked="#viewBookAction" prefHeight="464.0" prefWidth="770.0" />
       <FontAwesomeIconView glyphName="CLOSE" layoutX="782.0" layoutY="45.0" onMouseClicked="#closeAction" size="35" />
    </children>
 </AnchorPane>

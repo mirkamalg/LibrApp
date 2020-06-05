@@ -87,8 +87,6 @@ public class MainController implements Initializable {
                 String mapString = rs.getString("images");
                 String[] pairs = mapString.split(" ");
 
-                System.out.println("IMAGES === " + mapString);
-
                 Map<String, String> map = new HashMap<>();
                 for (String pair:pairs) {
                     String[] keyValue = pair.split("=");
