@@ -13,7 +13,8 @@ public class DataBase {
 
         assert con != null;
         Statement state = con.createStatement();
-        return state.executeQuery("SELECT header, body, time FROM notes");
+        state.setFetchSize(15);
+        return state.executeQuery("SELECT * FROM books");
     }
 
     private static void getConnection() throws ClassNotFoundException, SQLException {
@@ -32,12 +33,12 @@ public class DataBase {
             if (!res.next()) {
                 System.out.println("Creating and prepopulating");
                 Statement state2 = con.createStatement();
-                state2.execute("CREATE TABLE notes(id integer,"
+                state2.execute("CREATE TABLE books(id integer,"
                         + "googleID varchar(15)," + "title text," + "publisher text,"
-                        + "publishDate text" + "description text" + "language text"
-                        + "googleBooksInfoURL text" + "pageCount integer" + "averageRating double"
-                        + "hasMatureContent integer" + "authors text" + "categories text"
-                        + "images text" + "primary key(id));");
+                        + "publishDate text," + "description text," + "language text,"
+                        + "googleBooksInfoURL text," + "pageCount integer," + "averageRating double,"
+                        + "hasMatureContent integer," + "authors text," + "categories text,"
+                        + "images text," + "primary key(id));");
 
                 PreparedStatement prep = con.prepareStatement("INSERT INTO books values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
                 prep.setString(2, "none");
@@ -52,7 +53,7 @@ public class DataBase {
                 prep.setString(11, "0");
                 prep.setString(12, "author1");
                 prep.setString(13, "adventure");
-                prep.setString(14, "user nicePic");
+                prep.setString(14, "user=nicePic");
                 prep.execute();
             }
         }
@@ -73,12 +74,12 @@ public class DataBase {
         prep.setString(9, String.valueOf(pageCount));
         prep.setString(10, String.valueOf(averageRating));
         prep.setString(11, String.valueOf(hasMatureContent));
-        prep.setString(12, String.join(" ", authors));
-        prep.setString(13, String.join(categories));
+        prep.setString(12, String.join("~~~", authors));
+        prep.setString(13, String.join("~~~", categories));
 
         StringBuilder builder = new StringBuilder();
         images.forEach((key, value) -> {
-            builder.append(key).append(" ").append(value).append(" ");
+            builder.append(key).append("=").append(value).append(" ");
         });
 
         prep.setString(14, builder.toString());
@@ -89,7 +90,7 @@ public class DataBase {
         if (con == null) {
             getConnection();
         }
-        PreparedStatement prep = con.prepareStatement("DELETE FROM books WHERE header=?");
+        PreparedStatement prep = con.prepareStatement("DELETE FROM books WHERE title=?");
 
         prep.setString(1, deletedBookName);
         prep.executeUpdate();

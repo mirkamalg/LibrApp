@@ -6,14 +6,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -63,6 +69,10 @@ public class AddNewBook {
 
     static Stage stage;
 
+    public static File selectedFile;
+
+    private DataBase dataBase = new DataBase();
+
     public static void initializeAddNewNoteScreen() throws IOException {
         stage = new Stage();
 
@@ -78,7 +88,7 @@ public class AddNewBook {
         stage.showAndWait();
     }
 
-    public void addAction(ActionEvent actionEvent) throws IOException {
+    public void addAction(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
         if (!bookTitleTextField.getText().isEmpty() && !authorNameTextField.getText().isEmpty() && !authorNameTextField1.getText().isEmpty() && !pageCountTextField.getText().isEmpty()) {
             String bookTitle = bookTitleTextField.getText();
 
@@ -125,9 +135,19 @@ public class AddNewBook {
                 hasMatureContent = 0;
             }
 
-            Book addedBook = new Book("none", bookTitle, publisher, publishDate, description, language, "none", pageCount, 0, hasMatureContent, authors, categories, images);
+            Book addedBook = new Book("none", bookTitle, publisher,
+                    publishDate, description, language,
+                    "none", pageCount, 0,
+                    hasMatureContent, authors, categories, images);
 
             DataHandler.getBooks().put(bookTitle, addedBook);
+
+            DataBase.addBook("none", bookTitle, publisher,
+                    publishDate, description, language,
+                    "none", pageCount, 0,
+                    hasMatureContent, authors, categories, images);
+
+
             stage.close();
         }
     }
@@ -138,5 +158,15 @@ public class AddNewBook {
 
     public void detailsAction(ActionEvent actionEvent) {
         detailsVBox.setDisable(!detailsCheckBox.isSelected());
+    }
+
+    public void addCoverPhotoAction(MouseEvent mouseEvent) throws FileNotFoundException {
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter imageFilter = new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png", "*.jpeg");
+        fileChooser.getExtensionFilters().add(imageFilter);
+
+        selectedFile = fileChooser.showOpenDialog(stage);
+        Image image = new Image(new FileInputStream(selectedFile.getAbsolutePath()));
+        coverImageView.setImage(image);
     }
 }

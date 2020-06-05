@@ -40,6 +40,7 @@ public class AllBooks implements Initializable {
 
         stage.setScene(allBooksScene);
         stage.showAndWait();
+        AddNewBook.selectedFile = null;
     }
 
     @Override

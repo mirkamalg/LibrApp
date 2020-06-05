@@ -21,7 +21,7 @@
             </Label>
          </children>
       </HBox>
-      <ImageView fx:id="coverImageView" fitHeight="189.0" fitWidth="149.0" layoutX="30.0" layoutY="43.0" pickOnBounds="true">
+      <ImageView fx:id="coverImageView" fitHeight="189.0" fitWidth="149.0" layoutX="30.0" layoutY="43.0" onMouseClicked="#addCoverPhotoAction" pickOnBounds="true">
          <image>
             <Image url="@Pics/question-mark.png" />
          </image>

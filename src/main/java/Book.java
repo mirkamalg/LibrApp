@@ -1,5 +1,6 @@
 import javafx.scene.image.Image;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 
@@ -28,7 +29,9 @@ public class Book {
         this.categories = categories;
 
         if (googleID.equals("none")) {
-            setCoverImage(new Image("Pics/question-mark.png"));
+            if (AddNewBook.selectedFile != null) {
+                setCoverImage(new Image(new FileInputStream(AddNewBook.selectedFile.getAbsolutePath())));
+            } else setCoverImage(new Image("Pics/question-mark.png"));
         } else {
             Image image = new Image(images.get("thumbnail"));
             setCoverImage(image);

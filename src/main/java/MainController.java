@@ -8,7 +8,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -71,5 +76,33 @@ public class MainController implements Initializable {
         Event.fireEvent(myBooksLabel, new MouseEvent(MouseEvent.MOUSE_CLICKED, 0,
                 0, 0, 0, MouseButton.PRIMARY, 1, true, true, true, true,
                 true, true, true, true, true, true, null));
+
+        DataBase dataBase = new DataBase();  //Load book data from SQLite database
+        ResultSet rs;
+
+        try {
+            rs = dataBase.getBooksResultSet();
+            while (rs.next()) {
+
+                String mapString = rs.getString("images");
+                String[] pairs = mapString.split(" ");
+
+                System.out.println("IMAGES === " + mapString);
+
+                Map<String, String> map = new HashMap<>();
+                for (String pair:pairs) {
+                    String[] keyValue = pair.split("=");
+                    map.put(keyValue[0], keyValue[1]);
+                }
+
+                DataHandler.getBooks().put(rs.getString("title"), new Book(rs.getString("googleID"), rs.getString("title"),
+                        rs.getString("publisher"), rs.getString("publishDate"), rs.getString("description"),
+                        rs.getString("language"), rs.getString("googleBooksInfoURL"), rs.getInt("pageCount"),
+                        rs.getDouble("averageRating"), rs.getInt("hasMatureContent"), rs.getString("authors").split("~~~"),
+                        rs.getString("categories"), map));
+            }
+        } catch (SQLException | ClassNotFoundException | IOException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }
