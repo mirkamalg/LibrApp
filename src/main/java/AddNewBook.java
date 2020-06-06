@@ -90,7 +90,14 @@ public class AddNewBook {
 
     public void addAction(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
         if (!bookTitleTextField.getText().isEmpty() && !authorNameTextField.getText().isEmpty() && !pageCountTextField.getText().isEmpty()) {
-            String bookTitle = bookTitleTextField.getText();
+
+            String bookTitle;
+            if (DataHandler.getBooks().containsKey(bookTitleTextField.getText())) {
+                bookTitleTextField.setText("This book already exists!");
+                return;
+            }else {
+                bookTitle = bookTitleTextField.getText();
+            }
 
             String authorOne = authorNameTextField.getText();
             String authorTwo;

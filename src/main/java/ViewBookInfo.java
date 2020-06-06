@@ -123,5 +123,6 @@ public class ViewBookInfo implements Initializable {
         descriptionLabel.setText(book.getDescription());
         pageCountLabel.setText(String.valueOf(book.getPageCount()));
         categoriesLabel.setText(book.getCategories());
+        coverImageView.setImage(book.getCoverImage());
     }
 }
