@@ -4,6 +4,7 @@ import java.util.Map;
 public class DataHandler {
 
     private static Map<String, Book> books = new HashMap<>();
+    public static String title;
 
     public static Map<String, Book> getBooks() {
         return books;

@@ -18,6 +18,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AllBooks implements Initializable {
@@ -56,8 +57,8 @@ public class AllBooks implements Initializable {
     }
 
     public void viewBookAction(MouseEvent mouseEvent) throws IOException {
-        ViewBookInfo viewBookInfo = new ViewBookInfo();
-        viewBookInfo.initializeBookInfoScreen(DataHandler.getBooks().get(allBooksListView.getSelectionModel().getSelectedItem()));
+        DataHandler.title = allBooksListView.getSelectionModel().getSelectedItem();
+        ViewBookInfo.initializeBookInfoScreen();
     }
 
     static class CustomCell extends ListCell<String> {
@@ -80,6 +81,11 @@ public class AllBooks implements Initializable {
                 String item = getItem();
                 getListView().getItems().remove(item);
                 DataHandler.getBooks().remove(item);
+                try {
+                    DataBase.deleteBook(item);
+                } catch (SQLException | ClassNotFoundException throwables) {
+                    throwables.printStackTrace();
+                }
             });
         }
 

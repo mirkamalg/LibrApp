@@ -1,6 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,8 +16,10 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ViewBookInfo {
+public class ViewBookInfo implements Initializable {
 
     @FXML
     private Label bookTitleTopLabel;
@@ -60,11 +63,11 @@ public class ViewBookInfo {
     @FXML
     private Button googleLinkButton;
 
-    Stage stage;
+    static Stage stage;
     String googleID;
     String googleURL;
 
-    public void initializeBookInfoScreen(Book book) throws IOException {
+    public static void initializeBookInfoScreen() throws IOException {
         stage = new Stage();
 
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -74,21 +77,6 @@ public class ViewBookInfo {
 
         Parent parent = FXMLLoader.load(ViewBookInfo.class.getResource("ViewBookInfoScreen.fxml"));
         Scene viewBookScene = new Scene(parent, 1094, 655);
-
-        googleID = book.getGoogleID();
-        googleURL = book.getGoogleBooksInfoURL();
-
-        bookTitleLabel.setText(book.getTitle());
-        bookTitleTopLabel.setText(book.getTitle());
-        authorNameLabel1.setText(book.getAuthors()[0]);
-        authorNameLabel2.setText(book.getAuthors()[1]);
-        publisherNameLabel.setText(book.getPublisher());
-        publishDateLabel.setText(book.getPublishDate());
-        averageRatingLabel.setText(String.valueOf(book.getAverageRating()));
-        languageLabel.setText(book.getLanguage());
-        descriptionLabel.setText(book.getDescription());
-        pageCountLabel.setText(String.valueOf(book.getPageCount()));
-        categoriesLabel.setText(book.getCategories());
 
         stage.setScene(viewBookScene);
         stage.showAndWait();
@@ -110,5 +98,30 @@ public class ViewBookInfo {
         StringSelection stringSelection = new StringSelection(copiedText);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Book book = DataHandler.getBooks().get(DataHandler.title);
+
+        googleID = book.getGoogleID();
+        googleURL = book.getGoogleBooksInfoURL();
+
+        bookTitleLabel.setText(book.getTitle());
+        bookTitleTopLabel.setText(book.getTitle());
+        authorNameLabel1.setText(book.getAuthors()[0]);
+        try{
+            authorNameLabel2.setText(book.getAuthors()[1]);
+        }catch (Exception ignored) {
+            authorNameLabel2.setText("?");
+        }
+
+        publisherNameLabel.setText(book.getPublisher());
+        publishDateLabel.setText(book.getPublishDate());
+        averageRatingLabel.setText(String.valueOf(book.getAverageRating()));
+        languageLabel.setText(book.getLanguage());
+        descriptionLabel.setText(book.getDescription());
+        pageCountLabel.setText(String.valueOf(book.getPageCount()));
+        categoriesLabel.setText(book.getCategories());
     }
 }
