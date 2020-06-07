@@ -63,6 +63,9 @@ public class ViewBookInfo implements Initializable {
     @FXML
     private Button googleLinkButton;
 
+    @FXML
+    private Label statusLabel;
+
     static Stage stage;
     String googleID;
     String googleURL;
@@ -124,5 +127,16 @@ public class ViewBookInfo implements Initializable {
         pageCountLabel.setText(String.valueOf(book.getPageCount()));
         categoriesLabel.setText(book.getCategories());
         coverImageView.setImage(book.getCoverImage());
+        switch (book.getStatus()) {
+            case "wantToRead":
+                statusLabel.setText("Want to read");
+                break;
+            case "reading":
+                statusLabel.setText("Reading");
+                break;
+            case "haveRead":
+                statusLabel.setText("Have read");
+                break;
+        }
     }
 }

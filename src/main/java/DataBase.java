@@ -38,9 +38,9 @@ public class DataBase {
                         + "publishDate text," + "description text," + "language text,"
                         + "googleBooksInfoURL text," + "pageCount integer," + "averageRating double,"
                         + "hasMatureContent integer," + "authors text," + "categories text,"
-                        + "images text," + "primary key(id));");
+                        + "images text," + "status text," + "primary key(id));");
 
-                PreparedStatement prep = con.prepareStatement("INSERT INTO books values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+                PreparedStatement prep = con.prepareStatement("INSERT INTO books values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
                 prep.setString(2, "none");
                 prep.setString(3, "Book");
                 prep.setString(4, "Publisher");
@@ -54,16 +54,17 @@ public class DataBase {
                 prep.setString(12, "author1");
                 prep.setString(13, "adventure");
                 prep.setString(14, "user=nicePic");
+                prep.setString(15, "wantToRead");
                 prep.execute();
             }
         }
     }
 
-    public static void addBook(String googleID, String title, String publisher, String publishDate, String description, String language, String googleBooksInfoURL, int pageCount, double averageRating, int hasMatureContent, String[] authors, String categories, Map<String, String> images) throws SQLException, ClassNotFoundException {
+    public static void addBook(String googleID, String title, String publisher, String publishDate, String description, String language, String googleBooksInfoURL, int pageCount, double averageRating, int hasMatureContent, String[] authors, String categories, Map<String, String> images, String status) throws SQLException, ClassNotFoundException {
         if (con == null) {
             getConnection();
         }
-        PreparedStatement prep = con.prepareStatement("INSERT INTO books values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement prep = con.prepareStatement("INSERT INTO books values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         prep.setString(2, googleID);
         prep.setString(3, title);
         prep.setString(4, publisher);
@@ -83,6 +84,7 @@ public class DataBase {
         });
 
         prep.setString(14, builder.toString());
+        prep.setString(15, status);
         prep.execute();
     }
 

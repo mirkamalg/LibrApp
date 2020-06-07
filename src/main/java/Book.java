@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Book {
 
-    private String googleID, title, publisher, publishDate, description, language, googleBooksInfoURL, categories;
+    private String googleID, title, publisher, publishDate, description, language, googleBooksInfoURL, categories, status;
     private int pageCount;
     private double averageRating;
     private int hasMatureContent;
@@ -14,7 +14,7 @@ public class Book {
     private Map<String, String> images;
     private Image CoverImage;
 
-    public Book(String googleID, String title, String publisher, String publishDate, String description, String language, String googleBooksInfoURL, int pageCount, double averageRating, int hasMatureContent, String[] authors, String categories, Map<String, String> images) throws IOException {
+    public Book(String googleID, String title, String publisher, String publishDate, String description, String language, String googleBooksInfoURL, int pageCount, double averageRating, int hasMatureContent, String[] authors, String categories, Map<String, String> images, String status) throws IOException {
         this.googleID = googleID;
         this.title = title;
         this.publisher = publisher;
@@ -27,6 +27,7 @@ public class Book {
         this.hasMatureContent = hasMatureContent;
         this.authors = authors;
         this.categories = categories;
+        this.status = status;
 
         if (googleID.equals("none")) {
             if (AddNewBook.selectedFile != null) {
@@ -148,5 +149,13 @@ public class Book {
 
     public void setImages(Map<String, String> images) {
         this.images = images;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -1,11 +1,10 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -19,11 +18,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ResourceBundle;
 
-public class AddNewBook {
+public class AddNewBook implements Initializable {
 
     @FXML
     private VBox detailsVBox;
@@ -66,6 +67,15 @@ public class AddNewBook {
 
     @FXML
     private Button addButton;
+
+    @FXML
+    private RadioButton wantToReadToggle;
+
+    @FXML
+    private RadioButton readingToggle;
+
+    @FXML
+    private RadioButton haveReadToggle;
 
     static Stage stage;
 
@@ -125,6 +135,7 @@ public class AddNewBook {
             String description;
             String language;
             String categories;
+            String status = "wantToRead";
             int hasMatureContent;  // 0 is false and 1 is true
 
             if (detailsCheckBox.isSelected()) {
@@ -163,6 +174,7 @@ public class AddNewBook {
                 } else{
                     hasMatureContent = 0;
                 }
+
             } else {
                 publisher = "?";
                 publishDate = "?";
@@ -172,17 +184,21 @@ public class AddNewBook {
                 hasMatureContent = 0;
             }
 
+            if (wantToReadToggle.isSelected()) status = "wantToRead";   //  Setting type
+            else if (readingToggle.isSelected()) status = "reading";
+            else if (haveReadToggle.isSelected()) status = "haveRead";
+
             Book addedBook = new Book("none", bookTitle, publisher,
                     publishDate, description, language,
                     "none", pageCount, 0,
-                    hasMatureContent, authors, categories, images);
+                    hasMatureContent, authors, categories, images, status);
 
             DataHandler.getBooks().put(bookTitle, addedBook);
 
             DataBase.addBook("none", bookTitle, publisher,
                     publishDate, description, language,
                     "none", pageCount, 0,
-                    hasMatureContent, authors, categories, images);
+                    hasMatureContent, authors, categories, images, status);
 
 
             stage.close();
@@ -205,5 +221,14 @@ public class AddNewBook {
         selectedFile = fileChooser.showOpenDialog(stage);
         Image image = new Image(new FileInputStream(selectedFile.getAbsolutePath()));
         coverImageView.setImage(image);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        ToggleGroup toggleGroup = new ToggleGroup();
+        wantToReadToggle.setToggleGroup(toggleGroup);
+        readingToggle.setToggleGroup(toggleGroup);
+        haveReadToggle.setToggleGroup(toggleGroup);
+        wantToReadToggle.setSelected(true);
     }
 }

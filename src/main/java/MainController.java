@@ -97,7 +97,7 @@ public class MainController implements Initializable {
                         rs.getString("publisher"), rs.getString("publishDate"), rs.getString("description"),
                         rs.getString("language"), rs.getString("googleBooksInfoURL"), rs.getInt("pageCount"),
                         rs.getDouble("averageRating"), rs.getInt("hasMatureContent"), rs.getString("authors").split("~~~"),
-                        rs.getString("categories"), map));
+                        rs.getString("categories"), map, rs.getString("status")));
             }
         } catch (SQLException | ClassNotFoundException | IOException throwables) {
             throwables.printStackTrace();

@@ -144,9 +144,11 @@ public class BookFinder {
                 googleLink = "?";
             }
 
+            String status = "wantToRead";
+
             Book book = null;
             try {
-                book = new Book(id, title, publisher, publishDate, description, language, googleLink, pageCount, averageRating, hasMatureContent, authors, categories, images);
+                book = new Book(id, title, publisher, publishDate, description, language, googleLink, pageCount, averageRating, hasMatureContent, authors, categories, images, status);
             } catch (IOException e) {
                 e.printStackTrace();
             }
