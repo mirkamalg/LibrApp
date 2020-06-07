@@ -127,6 +127,7 @@ public class BookFinder {
 
                 Map<String, String> images;
                 if ((( (Map) ((Map) k).get("volumeInfo")).containsKey("imageLinks"))) {
+                    images = new HashMap<>();
                     images = (Map<String, String>) ((Map) ((Map) k).get("volumeInfo")).get("imageLinks");
                 } else {
                     images = new HashMap<>();
@@ -135,7 +136,17 @@ public class BookFinder {
 
                 //  Getting the thumbnail image
 
-                Image image = new Image(images.get("thumbnail"));
+                Image image;
+                try {
+                    image = new Image(images.get("smallThumbnail"));
+                    System.out.println("Getting " + images.get("smallThumbnail"));
+                } catch (Exception e) {
+                    try {
+                        image = new Image(images.get("thumbnail"));
+                    } catch (Exception e1) {
+                        image = new Image("Pics/question-mark.png");
+                    }
+                }
 
                 String language;
                 if ((( (Map) ((Map) k).get("volumeInfo")).containsKey("language"))) {
