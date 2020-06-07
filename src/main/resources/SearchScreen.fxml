@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="searchPane" prefHeight="728.0" prefWidth="963.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, transparent);" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Search">
+   <children>
+      <AnchorPane layoutY="70.0" prefHeight="100.0" prefWidth="963.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, #ffffe4);">
+         <children>
+            <TextField fx:id="bookTitleTextField" layoutX="69.0" layoutY="30.0" prefHeight="41.0" prefWidth="385.0" promptText="Search book title">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <FontAwesomeIconView glyphName="SEARCH" layoutX="14.0" layoutY="63.0" size="40" style="-fx-fill: #29b6f6;" />
+            <Button fx:id="searchButton" layoutX="463.0" layoutY="32.0" mnemonicParsing="false" onAction="#searchAction" prefHeight="34.0" prefWidth="66.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffe0b2;" text="Search" />
+            <RadioButton fx:id="authorNameToggle" layoutX="545.0" layoutY="22.0" mnemonicParsing="false" text="Author name" />
+            <RadioButton fx:id="publisherNameToggle" layoutX="545.0" layoutY="56.0" mnemonicParsing="false" text="Publisher name" />
+            <TextField fx:id="authorNameTextField" disable="true" layoutX="685.0" layoutY="15.0" prefHeight="31.0" prefWidth="263.0" promptText="Author name" />
+            <TextField fx:id="publisherNameTextField" disable="true" layoutX="685.0" layoutY="53.0" prefHeight="31.0" prefWidth="263.0" promptText="Publisher name" />
+         </children>
+      </AnchorPane>
+      <ListView fx:id="resultListView" layoutX="27.0" layoutY="214.0" prefHeight="488.0" prefWidth="910.0" />
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="912.0" layoutY="46.0" onMouseClicked="#closeAction" size="35" />
+   </children>
+</AnchorPane>
