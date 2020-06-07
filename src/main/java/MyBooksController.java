@@ -1,12 +1,20 @@
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class MyBooksController {
+public class MyBooksController implements Initializable {
 
     @FXML
     private AnchorPane allBooksPane;
@@ -54,5 +62,25 @@ public class MyBooksController {
 
     public void addNewBookAction(ActionEvent actionEvent) throws IOException {
         AddNewBook.initializeAddNewNoteScreen();
+    }
+
+    private void bindToTime() {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0),
+                        new EventHandler<ActionEvent>() {
+                            @Override public void handle(ActionEvent actionEvent) {
+                                totalAllBooksCounter.setText("Total: " + DataHandler.getBooks().size());  // Total counter updater
+                            }
+                        }
+                ),
+                new KeyFrame(Duration.seconds(1))
+        );
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        bindToTime();
     }
 }
