@@ -3,11 +3,13 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -93,13 +95,16 @@ public class MainController implements Initializable {
                     map.put(keyValue[0], keyValue[1]);
                 }
 
+                byte[] buffer = rs.getBytes("image");
+                Image image = new Image(new ByteArrayInputStream(buffer));
+
                 DataHandler.getBooks().put(rs.getString("title"), new Book(rs.getString("googleID"), rs.getString("title"),
                         rs.getString("publisher"), rs.getString("publishDate"), rs.getString("description"),
                         rs.getString("language"), rs.getString("googleBooksInfoURL"), rs.getInt("pageCount"),
                         rs.getDouble("averageRating"), rs.getInt("hasMatureContent"), rs.getString("authors").split("~~~"),
-                        rs.getString("categories"), map, rs.getString("status")));
+                        rs.getString("categories"), map, rs.getString("status"), image));
             }
-        } catch (SQLException | ClassNotFoundException | IOException throwables) {
+        } catch (SQLException | ClassNotFoundException | IOException | NullPointerException throwables) {
             throwables.printStackTrace();
         }
     }

@@ -1,3 +1,4 @@
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -66,6 +67,12 @@ public class ViewBookInfo implements Initializable {
     @FXML
     private Label statusLabel;
 
+    @FXML
+    private Label matureContentLabel;
+
+    @FXML
+    private FontAwesomeIconView matureContentIcon;
+
     static Stage stage;
     String googleID;
     String googleURL;
@@ -127,6 +134,13 @@ public class ViewBookInfo implements Initializable {
         pageCountLabel.setText(String.valueOf(book.getPageCount()));
         categoriesLabel.setText(book.getCategories());
         coverImageView.setImage(book.getCoverImage());
+
+        if (book.hasMatureContent() == 1) {     //  Default is no, only this case should be considered
+            matureContentLabel.setText("Yes");
+            matureContentIcon.setGlyphName("WARNING");
+            matureContentIcon.setStyle("-fx-fill: orange");
+        }
+
         switch (book.getStatus()) {
             case "wantToRead":
                 statusLabel.setText("Want to read");

@@ -16,6 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -83,7 +84,7 @@ public class AllBooks implements Initializable {
                 DataHandler.getBooks().remove(item);
                 try {
                     DataBase.deleteBook(item);
-                } catch (SQLException | ClassNotFoundException throwables) {
+                } catch (SQLException | ClassNotFoundException | FileNotFoundException throwables) {
                     throwables.printStackTrace();
                 }
             });

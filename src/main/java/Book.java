@@ -12,9 +12,9 @@ public class Book {
     private int hasMatureContent;
     private String[] authors;
     private Map<String, String> images;
-    private Image CoverImage;
+    private Image coverImage;
 
-    public Book(String googleID, String title, String publisher, String publishDate, String description, String language, String googleBooksInfoURL, int pageCount, double averageRating, int hasMatureContent, String[] authors, String categories, Map<String, String> images, String status) throws IOException {
+    public Book(String googleID, String title, String publisher, String publishDate, String description, String language, String googleBooksInfoURL, int pageCount, double averageRating, int hasMatureContent, String[] authors, String categories, Map<String, String> images, String status, Image coverImage) throws IOException {
         this.googleID = googleID;
         this.title = title;
         this.publisher = publisher;
@@ -28,11 +28,12 @@ public class Book {
         this.authors = authors;
         this.categories = categories;
         this.status = status;
+        this.coverImage = coverImage;
 
         if (googleID.equals("none")) {
             if (AddNewBook.selectedFile != null) {
                 setCoverImage(new Image(new FileInputStream(AddNewBook.selectedFile.getAbsolutePath())));
-            } else setCoverImage(new Image("Pics/question-mark.png"));
+            }
         } else {
             Image image = new Image(images.get("thumbnail"));
             setCoverImage(image);
@@ -40,11 +41,11 @@ public class Book {
     }
 
     public Image getCoverImage() {
-        return CoverImage;
+        return coverImage;
     }
 
     public void setCoverImage(Image coverImage) {
-        CoverImage = coverImage;
+        this.coverImage = coverImage;
     }
 
     public String getGoogleID() {
@@ -119,7 +120,7 @@ public class Book {
         this.averageRating = averageRating;
     }
 
-    public int HasMatureContent() {
+    public int hasMatureContent() {
         return hasMatureContent;
     }
 

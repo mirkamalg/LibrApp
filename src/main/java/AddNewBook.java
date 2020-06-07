@@ -191,14 +191,14 @@ public class AddNewBook implements Initializable {
             Book addedBook = new Book("none", bookTitle, publisher,
                     publishDate, description, language,
                     "none", pageCount, 0,
-                    hasMatureContent, authors, categories, images, status);
+                    hasMatureContent, authors, categories, images, status, new Image("file:" + selectedFile.getAbsolutePath()));
 
             DataHandler.getBooks().put(bookTitle, addedBook);
 
             DataBase.addBook("none", bookTitle, publisher,
                     publishDate, description, language,
                     "none", pageCount, 0,
-                    hasMatureContent, authors, categories, images, status);
+                    hasMatureContent, authors, categories, images, status, selectedFile);
 
 
             stage.close();
@@ -219,8 +219,13 @@ public class AddNewBook implements Initializable {
         fileChooser.getExtensionFilters().add(imageFilter);
 
         selectedFile = fileChooser.showOpenDialog(stage);
-        Image image = new Image(new FileInputStream(selectedFile.getAbsolutePath()));
-        coverImageView.setImage(image);
+        if (selectedFile != null) {
+            Image image = new Image(new FileInputStream(selectedFile.getAbsolutePath()));
+            coverImageView.setImage(image);
+        } else {
+            coverImageView.setImage(new Image("Pics/question-mark.png"));
+        }
+
     }
 
     @Override

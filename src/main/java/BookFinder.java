@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import javafx.scene.image.Image;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -130,6 +131,10 @@ public class BookFinder {
                 images.put("?", "?");
             }
 
+            //  Getting the thumbnail image
+
+            Image image = new Image(images.get("thumbnail"));
+
             String language;
             if ((( (Map) ((Map) k).get("volumeInfo")).containsKey("language"))) {
                 language = ((Map) ((Map) k).get("volumeInfo")).get("language").toString();
@@ -144,11 +149,11 @@ public class BookFinder {
                 googleLink = "?";
             }
 
-            String status = "wantToRead";
+            String status = "wantToRead";  // hardcoded the status for now
 
             Book book = null;
             try {
-                book = new Book(id, title, publisher, publishDate, description, language, googleLink, pageCount, averageRating, hasMatureContent, authors, categories, images, status);
+                book = new Book(id, title, publisher, publishDate, description, language, googleLink, pageCount, averageRating, hasMatureContent, authors, categories, images, status, image);
             } catch (IOException e) {
                 e.printStackTrace();
             }

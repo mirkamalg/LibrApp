@@ -70,6 +70,15 @@ public class MyBooksController implements Initializable {
                         new EventHandler<ActionEvent>() {
                             @Override public void handle(ActionEvent actionEvent) {
                                 totalAllBooksCounter.setText("Total: " + DataHandler.getBooks().size());  // Total counter updater
+
+                                wantToReadCounter.setText("Total: " + (int) DataHandler.getBooks().values().stream()
+                                        .filter(book -> book.getStatus().equals("wantToRead")).count());
+
+                                readingCounter.setText("Total: " + (int) DataHandler.getBooks().values().stream()
+                                        .filter(book -> book.getStatus().equals("reading")).count());
+
+                                readCounter.setText("Total: " + (int) DataHandler.getBooks().values().stream()
+                                        .filter(book -> book.getStatus().equals("haveRead")).count());
                             }
                         }
                 ),

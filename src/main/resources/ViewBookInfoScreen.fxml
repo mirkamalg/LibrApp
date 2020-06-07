@@ -122,8 +122,8 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="googleIDButton" layoutX="649.0" layoutY="339.0" mnemonicParsing="false" onAction="#googleIDAction" prefHeight="45.0" prefWidth="170.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffccbc;" text="Copy book's GoogleID" />
-      <Button fx:id="googleLinkButton" layoutX="651.0" layoutY="397.0" mnemonicParsing="false" onAction="#googleLinkAction" prefHeight="45.0" prefWidth="221.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffccbc;" text="Copy book's google page URL" />
+      <Button fx:id="googleIDButton" layoutX="649.0" layoutY="393.0" mnemonicParsing="false" onAction="#googleIDAction" prefHeight="45.0" prefWidth="170.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffccbc;" text="Copy book's GoogleID" />
+      <Button fx:id="googleLinkButton" layoutX="651.0" layoutY="451.0" mnemonicParsing="false" onAction="#googleLinkAction" prefHeight="45.0" prefWidth="221.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffccbc;" text="Copy book's google page URL" />
       <FontAwesomeIconView glyphName="CLOSE" layoutX="1027.0" layoutY="44.0" onMouseClicked="#closeAction" size="35" />
       <Label fx:id="statusLabel" layoutX="649.0" layoutY="304.0" text="Status">
          <font>
@@ -135,5 +135,16 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Label fx:id="matureContentLabel" layoutX="671.0" layoutY="355.0" text="No">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="649.0" layoutY="339.0" text="Has mature content">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fx:id="matureContentIcon" glyphName="CHECK" layoutX="649.0" layoutY="379.0" size="20" style="-fx-fill: green;" />
    </children>
 </AnchorPane>
