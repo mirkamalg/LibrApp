@@ -35,8 +35,13 @@ public class Book {
                 setCoverImage(new Image(new FileInputStream(AddNewBook.selectedFile.getAbsolutePath())));
             }
         } else {
-            Image image = new Image(images.get("thumbnail"));
-            setCoverImage(image);
+            try {
+                Image image = new Image(images.get("thumbnail"));
+                setCoverImage(image);
+            } catch (Exception e) {
+                Image image = new Image("Pics/question-mark.png");
+                setCoverImage(image);
+            }
         }
     }
 

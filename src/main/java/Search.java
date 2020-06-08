@@ -97,7 +97,7 @@ public class Search implements Initializable {
     static class CustomCell extends ListCell<String> {
 
         HBox hBox = new HBox(50);
-        Button button = new Button("Add");
+        Button button = new Button("Want to read");
         Label title = new Label("");
         ImageView img = new ImageView();
 
@@ -109,6 +109,7 @@ public class Search implements Initializable {
 
             img.setFitHeight(100);
             img.setFitWidth(100);
+            button.setStyle("-fx-background-radius: 25 25 25 25; -fx-background-color:  #ffe0b2");
 
             button.setOnAction(event -> {
 

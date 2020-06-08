@@ -77,6 +77,7 @@ public class AllBooks implements Initializable {
 
             img.setFitHeight(100);
             img.setFitWidth(100);
+            button.setStyle("-fx-background-radius: 25 25 25 25; -fx-background-color:  #ffe0b2");
 
             button.setOnAction(event -> {
                 String item = getItem();
