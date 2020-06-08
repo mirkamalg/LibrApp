@@ -10,6 +10,14 @@ application {
 group 'com.mirkamal'
 version '1.0-SNAPSHOT'
 
+task makeExecutableJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 repositories {
     mavenCentral()
 }
