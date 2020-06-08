@@ -20,7 +20,7 @@
             <TextField fx:id="publisherNameTextField" disable="true" layoutX="685.0" layoutY="53.0" prefHeight="31.0" prefWidth="263.0" promptText="Publisher name" />
          </children>
       </AnchorPane>
-      <ListView fx:id="resultListView" layoutX="27.0" layoutY="214.0" prefHeight="488.0" prefWidth="910.0" />
+      <ListView fx:id="resultListView" layoutX="27.0" layoutY="214.0" onMouseClicked="#viewBookAction" prefHeight="488.0" prefWidth="910.0" />
       <FontAwesomeIconView glyphName="CLOSE" layoutX="912.0" layoutY="46.0" onMouseClicked="#closeAction" size="35" />
    </children>
 </AnchorPane>

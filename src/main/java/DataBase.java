@@ -84,9 +84,13 @@ public class DataBase {
         prep.setString(13, String.join("~~~", categories));
 
         StringBuilder builder = new StringBuilder();
-        images.forEach((key, value) -> {
-            builder.append(key).append("=").append(value).append(" ");
-        });
+        try {
+            images.forEach((key, value) -> {
+                builder.append(key).append("=").append(value).append(" ");
+            });
+        } catch (Exception e) {
+            builder.append("?").append("=").append("?");
+        }
 
         prep.setString(14, builder.toString());
         prep.setString(15, status);
@@ -117,9 +121,5 @@ public class DataBase {
             System.err.println(e.getMessage());
         }
         return byteArrayOutputStream != null ? byteArrayOutputStream.toByteArray() : null;
-    }
-
-    public static void closeConnection() throws SQLException {
-        con.close();
     }
 }

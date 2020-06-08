@@ -94,6 +94,11 @@ public class Search implements Initializable {
         resultListView.setCellFactory(param -> new Search.CustomCell());
     }
 
+    public void viewBookAction(MouseEvent mouseEvent) throws IOException {
+        DataHandler.titleSearched = resultListView.getSelectionModel().getSelectedItem();
+        ViewSearchResultBook.initializeViewSearchResultBookScreen();
+    }
+
     static class CustomCell extends ListCell<String> {
 
         HBox hBox = new HBox(50);
