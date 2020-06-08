@@ -102,23 +102,17 @@ public class Search implements Initializable {
     static class CustomCell extends ListCell<String> {
 
         HBox hBox = new HBox(50);
-        Button button = new Button("Want to read");
         Label title = new Label("");
         ImageView img = new ImageView();
 
         public CustomCell() {
             super();
 
-            hBox.getChildren().addAll(img, title, button);
+            hBox.getChildren().addAll(img, title);
             hBox.setAlignment(Pos.CENTER_LEFT);
 
             img.setFitHeight(100);
             img.setFitWidth(100);
-            button.setStyle("-fx-background-radius: 25 25 25 25; -fx-background-color:  #ffe0b2");
-
-            button.setOnAction(event -> {
-
-            });
         }
 
         public void updateItem(String name, boolean empty) {
