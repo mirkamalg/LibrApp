@@ -11,6 +11,7 @@ import javafx.scene.layout.Pane;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -137,10 +138,27 @@ public class MainController implements Initializable {
             throwables.printStackTrace();
         }
 
+        //  Clear "Thumbnails" folder
+
+        try {
+            clearDirectory(new File("Thumbnails\\"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         //  Create "Thumbnails" folder if it doesn't exist
 
         if (!Files.exists(Paths.get("Thumbnails\\"))) {
             new File("Thumbnails\\").mkdir();
         }
+    }
+
+    private void clearDirectory(File f) throws FileNotFoundException {
+        if (f.isDirectory()) {
+            for (File c : f.listFiles())
+                clearDirectory(c);
+        }
+        if (!f.delete())
+            throw new FileNotFoundException("Failed to delete file: " + f);
     }
 }
