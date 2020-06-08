@@ -10,8 +10,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -132,6 +135,12 @@ public class MainController implements Initializable {
             }
         } catch (SQLException | ClassNotFoundException | IOException | NullPointerException throwables) {
             throwables.printStackTrace();
+        }
+
+        //  Create "Thumbnails" folder if it doesn't exist
+
+        if (!Files.exists(Paths.get("Thumbnails\\"))) {
+            new File("Thumbnails\\").mkdir();
         }
     }
 }
