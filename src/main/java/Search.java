@@ -60,7 +60,17 @@ public class Search implements Initializable {
                 publisher = publisherNameTextField.getText();
             }
 
-            ArrayList<Book> booksList = BookFinder.jsonToBookList(BookFinder.searchBooksJson(title));
+            String authorName = "";
+            if (authorNameToggle.isSelected()) {
+                 authorName = authorNameTextField.getText();
+            }
+
+            String publisherName = "";
+            if (publisherNameToggle.isSelected()) {
+                publisherName = publisherNameTextField.getText();
+            }
+
+            ArrayList<Book> booksList = BookFinder.jsonToBookList(BookFinder.searchBooksJson(title, authorName, publisherName));
 
             if (!books.isEmpty()) {
                 books.clear();

@@ -10,11 +10,33 @@ import java.util.*;
 
 public class BookFinder {
 
-    public static String searchBooksJson(String bookName) throws IOException {
+    public static String searchBooksJson(String bookName, String authorName, String publisherName) throws IOException {
         String[] name = bookName.split(" ");
         String formattedName = String.join("+", name);
 
-        URL url = new URL("https://www.googleapis.com/books/v1/volumes?q=" + formattedName);
+        URL url;
+        if (!authorName.isEmpty() && publisherName.isEmpty()) {
+            String[] author = authorName.split(" ");
+            String formattedAuthor = String.join("+", author);
+
+            url = new URL("https://www.googleapis.com/books/v1/volumes?q=" + formattedName + "+inauthor:" + formattedAuthor);
+        } else if (authorName.isEmpty() && !publisherName.isEmpty()) {
+            String[] publisher = publisherName.split(" ");
+            String formattedPublisher = String.join("+", publisher);
+
+            url = new URL("https://www.googleapis.com/books/v1/volumes?q=" + formattedName + "+inpublisher:" + formattedPublisher);
+        } else if (!authorName.isEmpty() && !publisherName.isEmpty()) {
+            String[] author = authorName.split(" ");
+            String formattedAuthor = String.join("+", author);
+
+            String[] publisher = publisherName.split(" ");
+            String formattedPublisher = String.join("+", publisher);
+
+            url = new URL("https://www.googleapis.com/books/v1/volumes?q=" + formattedName + "+inauthor:" + formattedAuthor + "+inpublisher:" + formattedPublisher);
+        } else {
+            url = new URL("https://www.googleapis.com/books/v1/volumes?q=" + formattedName);
+        }
+
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
 
