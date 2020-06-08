@@ -100,60 +100,65 @@ public class ViewSearchResultBook implements Initializable {
 
     public void addWantToReadAction(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
 
-        book.setStatus("wantToRead");
-        DataHandler.getBooks().put(book.getTitle(), book);
+        if (!DataHandler.getBooks().containsKey(book.getTitle())) {
+            book.setStatus("wantToRead");
+            DataHandler.getBooks().put(book.getTitle(), book);
 
-        BufferedImage bufferedImage = SwingFXUtils.fromFXImage(book.getCoverImage(), null);     //  Convert image to file
+            BufferedImage bufferedImage = SwingFXUtils.fromFXImage(book.getCoverImage(), null);     //  Convert image to file
 
-        File file = new File("temp.png");
-        if (file.createNewFile()) {
-            ImageIO.write(bufferedImage, "png", file);
+            File file = new File("Thumbnails\\" + book.getTitle() + ".png");
+            if (file.createNewFile()) {
+                ImageIO.write(bufferedImage, "png", file);
+            }
+
+            DataBase.addBook(book.getGoogleID(), book.getTitle(), book.getPublisher(), book.getPublishDate(), book.getDescription(),
+                    book.getLanguage(), book.getGoogleBooksInfoURL(), book.getPageCount(), book.getAverageRating(), book.hasMatureContent(),
+                    book.getAuthors(), book.getCategories(), book.getImages(), book.getStatus(), file);
+
+            stage.close();
         }
-
-        DataBase.addBook(book.getGoogleID(), book.getTitle(), book.getPublisher(), book.getPublishDate(), book.getDescription(),
-                book.getLanguage(), book.getGoogleBooksInfoURL(), book.getPageCount(), book.getAverageRating(), book.hasMatureContent(),
-                book.getAuthors(), book.getCategories(), book.getImages(), book.getStatus(), file);
-
-        file.delete();
-        stage.close();
     }
 
     public void addReadingAction(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
 
-        book.setStatus("reading");
-        DataHandler.getBooks().put(book.getTitle(), book);
+        if (!DataHandler.getBooks().containsKey(book.getTitle())) {
+            book.setStatus("reading");
+            DataHandler.getBooks().put(book.getTitle(), book);
 
-        BufferedImage bufferedImage = SwingFXUtils.fromFXImage(book.getCoverImage(), null);     //  Convert image to file
+            BufferedImage bufferedImage = SwingFXUtils.fromFXImage(book.getCoverImage(), null);     //  Convert image to file
 
-        File file = new File("temp.png");
-        if (file.createNewFile()) {
-            ImageIO.write(bufferedImage, "png", file);
+            File file = new File("Thumbnails\\" + book.getTitle() + ".png");
+            if (file.createNewFile()) {
+                ImageIO.write(bufferedImage, "png", file);
+            }
+
+            DataBase.addBook(book.getGoogleID(), book.getTitle(), book.getPublisher(), book.getPublishDate(), book.getDescription(),
+                    book.getLanguage(), book.getGoogleBooksInfoURL(), book.getPageCount(), book.getAverageRating(), book.hasMatureContent(),
+                    book.getAuthors(), book.getCategories(), book.getImages(), book.getStatus(), file);
+
+            stage.close();
         }
-
-        DataBase.addBook(book.getGoogleID(), book.getTitle(), book.getPublisher(), book.getPublishDate(), book.getDescription(),
-                book.getLanguage(), book.getGoogleBooksInfoURL(), book.getPageCount(), book.getAverageRating(), book.hasMatureContent(),
-                book.getAuthors(), book.getCategories(), book.getImages(), book.getStatus(), file);
-
-        stage.close();
     }
 
     public void addHaveReadAction(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
 
-        book.setStatus("haveRead");
-        DataHandler.getBooks().put(book.getTitle(), book);
+        if (!DataHandler.getBooks().containsKey(book.getTitle())) {
+            book.setStatus("haveRead");
+            DataHandler.getBooks().put(book.getTitle(), book);
 
-        BufferedImage bufferedImage = SwingFXUtils.fromFXImage(book.getCoverImage(), null);     //  Convert image to file
+            BufferedImage bufferedImage = SwingFXUtils.fromFXImage(book.getCoverImage(), null);     //  Convert image to file
 
-        File file = new File("temp.png");
-        if (file.createNewFile()) {
-            ImageIO.write(bufferedImage, "png", file);
+            File file = new File("Thumbnails\\" + book.getTitle() + ".png");
+            if (file.createNewFile()) {
+                ImageIO.write(bufferedImage, "png", file);
+            }
+
+            DataBase.addBook(book.getGoogleID(), book.getTitle(), book.getPublisher(), book.getPublishDate(), book.getDescription(),
+                    book.getLanguage(), book.getGoogleBooksInfoURL(), book.getPageCount(), book.getAverageRating(), book.hasMatureContent(),
+                    book.getAuthors(), book.getCategories(), book.getImages(), book.getStatus(), file);
+
+            stage.close();
         }
-
-        DataBase.addBook(book.getGoogleID(), book.getTitle(), book.getPublisher(), book.getPublishDate(), book.getDescription(),
-                book.getLanguage(), book.getGoogleBooksInfoURL(), book.getPageCount(), book.getAverageRating(), book.hasMatureContent(),
-                book.getAuthors(), book.getCategories(), book.getImages(), book.getStatus(), file);
-
-        stage.close();
     }
 
     @Override

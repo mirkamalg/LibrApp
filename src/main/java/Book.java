@@ -34,14 +34,6 @@ public class Book {
             if (AddNewBook.selectedFile != null) {
                 setCoverImage(new Image(new FileInputStream(AddNewBook.selectedFile.getAbsolutePath())));
             }
-        } else {
-            try {
-                Image image = new Image(images.get("thumbnail"));
-                setCoverImage(image);
-            } catch (Exception e) {
-                Image image = new Image("Pics/question-mark.png");
-                setCoverImage(image);
-            }
         }
     }
 
