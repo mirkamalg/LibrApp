@@ -61,9 +61,6 @@ public class ViewBookInfo implements Initializable {
     private Label categoriesLabel;
 
     @FXML
-    private Button googleIDButton;
-
-    @FXML
     private Button googleLinkButton;
 
     @FXML

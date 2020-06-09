@@ -4,7 +4,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -64,9 +67,6 @@ public class AddNewBook implements Initializable {
 
     @FXML
     private CheckBox matureContentCheckBox;
-
-    @FXML
-    private Button addButton;
 
     @FXML
     private RadioButton wantToReadToggle;

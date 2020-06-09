@@ -6,7 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 import java.io.ByteArrayInputStream;
@@ -23,12 +22,6 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-
-    @FXML
-    private AnchorPane mainAnchorPane;
-
-    @FXML
-    private AnchorPane navBarAnchorPane;
 
     @FXML
     private FontAwesomeIconView myBooksIcon;

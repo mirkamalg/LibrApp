@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -15,18 +14,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MyBooksController implements Initializable {
-
-    @FXML
-    private AnchorPane allBooksPane;
-
-    @FXML
-    private AnchorPane wantToReadPane;
-
-    @FXML
-    private AnchorPane readingPane;
-
-    @FXML
-    private AnchorPane readPane;
 
     @FXML
     private Label totalAllBooksCounter;

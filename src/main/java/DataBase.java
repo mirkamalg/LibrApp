@@ -40,27 +40,6 @@ public class DataBase {
                         + "googleBooksInfoURL text," + "pageCount integer," + "averageRating double,"
                         + "hasMatureContent integer," + "authors text," + "categories text,"
                         + "images text," + "status text," + "image blob," + "primary key(id));");
-
-//                PreparedStatement prep = con.prepareStatement("INSERT INTO books values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
-//                prep.setString(2, "none");
-//                prep.setString(3, "Book");
-//                prep.setString(4, "Publisher");
-//                prep.setString(5, "2020");
-//                prep.setString(6, "Desc");
-//                prep.setString(7, "EN");
-//                prep.setString(8, "URL");
-//                prep.setString(9, "150");
-//                prep.setString(10, "4");
-//                prep.setString(11, "0");
-//                prep.setString(12, "author1");
-//                prep.setString(13, "adventure");
-//                prep.setString(14, "user=nicePic");
-//                prep.setString(15, "wantToRead");
-//
-//                FileInputStream stream = new FileInputStream(new File("Pics/question-mark.png"));
-//                prep.setBlob(16, stream);
-//
-//                prep.execute();
             }
         }
     }

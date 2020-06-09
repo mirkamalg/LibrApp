@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -34,46 +33,49 @@ public class ViewSearchResultBook implements Initializable {
     Book book;
     @FXML
     private Label bookTitleTopLabel;
+
     @FXML
     private ImageView coverImageView;
+
     @FXML
     private Label bookTitleLabel;
+
     @FXML
     private Label authorNameLabel1;
+
     @FXML
     private Label authorNameLabel2;
+
     @FXML
     private Label publisherNameLabel;
+
     @FXML
     private Label publishDateLabel;
+
     @FXML
     private Label averageRatingLabel;
+
     @FXML
     private Label languageLabel;
+
     @FXML
     private Label pageCountLabel;
+
     @FXML
     private Label descriptionLabel;
+
     @FXML
     private Label categoriesLabel;
-    @FXML
-    private Button googleIDButton;
-    @FXML
-    private Button googleLinkButton;
-    @FXML
-    private Label statusLabel;
+
     @FXML
     private Label matureContentLabel;
+
     @FXML
     private FontAwesomeIconView matureContentIcon;
-    @FXML
-    private Button addWantToReadButton;
-    @FXML
-    private Button addReadingButton;
-    @FXML
-    private Button addHaveReadButton;
+
     @FXML
     private Label googleIDLabel;
+
 
     public static void initializeViewSearchResultBookScreen() throws IOException {
         stage = new Stage();
