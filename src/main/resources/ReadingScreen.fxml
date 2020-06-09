@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="655.0" prefWidth="854.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Reading">
+   <children>
+      <AnchorPane layoutY="55.0" prefHeight="94.0" prefWidth="854.0" style="-fx-background-color: linear-gradient(to right,  #e6ee9c, transparent);">
+         <children>
+            <Label layoutX="18.0" layoutY="12.0" text="Reading">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ListView fx:id="readingListView" layoutX="28.0" layoutY="177.0" onMouseClicked="#viewBookAction" prefHeight="464.0" prefWidth="770.0" />
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="782.0" layoutY="45.0" onMouseClicked="#closeAction" size="35" />
+   </children>
+</AnchorPane>

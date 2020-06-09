@@ -55,7 +55,7 @@ public class WantToRead implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        wantToReadListView.setCellFactory(param -> new AllBooks.CustomCell());
+        wantToReadListView.setCellFactory(param -> new CustomCell());
 
         DataHandler.getBooks().values().stream()         //  Getting books with value of "wantToRead" and adding them to the listview
                 .filter(book -> book.getStatus().equals("wantToRead"))
