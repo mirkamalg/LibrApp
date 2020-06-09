@@ -59,7 +59,7 @@
                   </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="readPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#readAction" prefHeight="242.0" prefWidth="460.0" style="-fx-background-color: #90caf9; -fx-background-radius: 25 25 25 25;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <AnchorPane fx:id="readPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#haveReadAction" prefHeight="242.0" prefWidth="460.0" style="-fx-background-color: #90caf9; -fx-background-radius: 25 25 25 25;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <VBox alignment="CENTER" prefHeight="242.0" prefWidth="460.0">
                      <children>

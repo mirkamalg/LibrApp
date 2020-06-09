@@ -56,8 +56,8 @@ public class MyBooksController implements Initializable {
         Reading.initializeReadingScreen();
     }
 
-    public void readAction(MouseEvent mouseEvent) {
-
+    public void haveReadAction(MouseEvent mouseEvent) throws IOException {
+        HaveRead.initializeHaveReadScreen();
     }
 
     public void addNewBookAction(ActionEvent actionEvent) throws IOException {
