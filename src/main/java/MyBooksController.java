@@ -48,8 +48,8 @@ public class MyBooksController implements Initializable {
         AllBooks.initializeAllBooksScreen();
     }
 
-    public void wantToReadAction(MouseEvent mouseEvent) {
-
+    public void wantToReadAction(MouseEvent mouseEvent) throws IOException {
+        WantToRead.initializeWantToReadScreen();
     }
 
     public void readingAction(MouseEvent mouseEvent) {

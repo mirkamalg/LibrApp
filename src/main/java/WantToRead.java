@@ -21,45 +21,47 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
-public class AllBooks implements Initializable {
-
-    @FXML
-    private ListView<String> allBooksListView;
+public class WantToRead implements Initializable {
 
     static Stage stage;
+    @FXML
+    private ListView<String> wantToReadListView;
 
-    static void initializeAllBooksScreen() throws IOException {
+    static void initializeWantToReadScreen() throws IOException {
         stage = new Stage();
 
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initStyle(StageStyle.UNDECORATED);
-        stage.setTitle("All books");
+        stage.setTitle("Want to read");
         stage.setResizable(false);
 
-        Parent parent = FXMLLoader.load(AllBooks.class.getResource("AllBooksScreen.fxml"));
-        Scene allBooksScene = new Scene(parent, 830, 655);
+        Parent parent = FXMLLoader.load(WantToRead.class.getResource("WantToReadScreen.fxml"));
+        Scene wantToReadScene = new Scene(parent, 830, 655);
 
-        stage.setScene(allBooksScene);
+        stage.setScene(wantToReadScene);
         stage.showAndWait();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        allBooksListView.setCellFactory(param -> new CustomCell());
-
-        DataHandler.getBooks().forEach((title, book) -> {
-            allBooksListView.getItems().add(title);
-        });
+    public void viewBookAction(MouseEvent mouseEvent) throws IOException {
+        DataHandler.title = wantToReadListView.getSelectionModel().getSelectedItem();
+        ViewBookInfo.initializeBookInfoScreen();
     }
 
     public void closeAction(MouseEvent mouseEvent) {
         stage.close();
     }
 
-    public void viewBookAction(MouseEvent mouseEvent) throws IOException {
-        DataHandler.title = allBooksListView.getSelectionModel().getSelectedItem();
-        ViewBookInfo.initializeBookInfoScreen();
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        wantToReadListView.setCellFactory(param -> new AllBooks.CustomCell());
+
+        DataHandler.getBooks().values().stream()         //  Getting books with value of "wantToRead" and adding them to the listview
+                .filter(book -> book.getStatus().equals("wantToRead"))
+                .collect(Collectors.toList()).forEach(book -> {
+                    wantToReadListView.getItems().add(book.getTitle());
+        });
     }
 
     static class CustomCell extends ListCell<String> {
@@ -108,5 +110,3 @@ public class AllBooks implements Initializable {
         }
     }
 }
-
-
