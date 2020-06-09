@@ -61,6 +61,9 @@ public class ViewBookInfo implements Initializable {
     private Label categoriesLabel;
 
     @FXML
+    private Button googleIDButton;
+
+    @FXML
     private Button googleLinkButton;
 
     @FXML
@@ -122,6 +125,7 @@ public class ViewBookInfo implements Initializable {
         googleURL = book.getGoogleBooksInfoURL();
 
         if (googleURL.equals("none")) googleLinkButton.setDisable(true);  // Disable if has no actual google link
+        if (googleID.equals("none")) googleIDButton.setDisable(true);     // Disable if has no actual google ID
 
         bookTitleLabel.setText(book.getTitle());
         bookTitleTopLabel.setText(book.getTitle());
