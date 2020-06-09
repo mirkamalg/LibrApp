@@ -3,6 +3,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -38,6 +39,10 @@ public class Main extends Application {
 
         Scene mainScene = new Scene(root, 1280, 720);
         mainStage.setScene(mainScene);
+
+        //  Adding app icon
+
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("Pics/librarylogo.png")));
 
         mainStage.setResizable(false);
         mainStage.show();
