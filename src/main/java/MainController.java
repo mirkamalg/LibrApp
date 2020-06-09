@@ -100,7 +100,21 @@ public class MainController implements Initializable {
     }
 
     public void aboutAction(MouseEvent mouseEvent) {
+        Pane loadedPane = handler.changePane("AboutScreen");
+        contentPane.getChildren().clear();
+        contentPane.getChildren().add(loadedPane);
 
+        aboutLabel.setStyle("-fx-text-fill:  #29b6f6");  //  Colorize chosen one, reset others
+        aboutIcon.setStyle("-fx-fill:  #29b6f6");
+
+        bookshelvesLabel.setStyle("");
+        bookshelvesIcon.setStyle("");
+
+        myBooksLabel.setStyle("");
+        myBooksIcon.setStyle("");
+
+        searchLabel.setStyle("");
+        searchIcon.setStyle("");
     }
 
     @Override

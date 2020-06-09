@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="728.0" prefWidth="963.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, transparent);" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="About">
+   <children>
+      <AnchorPane layoutY="70.0" prefHeight="100.0" prefWidth="963.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, #ffffe4);">
+         <children>
+            <Label layoutX="19.0" layoutY="10.0" text="About">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="912.0" layoutY="46.0" onMouseClicked="#closeAction" size="35" />
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="238.0" prefHeight="70.0" prefWidth="269.0" spacing="15.0">
+         <children>
+            <Label text="Version:">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Label>
+            <Label text="0.5">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="16.0" layoutY="311.0" text="Built for fun and self learning.">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Button layoutX="16.0" layoutY="398.0" mnemonicParsing="false" onAction="#sourceCodeAction" prefHeight="51.0" prefWidth="232.0" style="-fx-background-color: #ffe0b2; -fx-background-radius: 25 25 25 25;" text="Go to source code">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

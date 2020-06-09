@@ -16,7 +16,7 @@ public class TransitionHandler {
 
             pane = new FXMLLoader().load(url);
         }catch (Exception e) {
-            System.out.println("EXCEPTION!");
+            e.printStackTrace();
         }
 
         return pane;

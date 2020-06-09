@@ -8,7 +8,7 @@ application {
 }
 
 group 'com.mirkamal'
-version '1.0-SNAPSHOT'
+version '0.5'
 
 task makeExecutableJar(type: Jar) {
     manifest {

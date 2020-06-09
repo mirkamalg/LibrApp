@@ -1,4 +1,6 @@
+import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -97,7 +99,12 @@ public class ViewBookInfo implements Initializable {
     }
 
     public void googleLinkAction(ActionEvent actionEvent) {
-        copy(googleURL);
+        HostServicesFactory.getInstance(new Application() {
+            @Override
+            public void start(Stage primaryStage) throws Exception {
+                // keep empty
+            }
+        }).showDocument(googleURL);
     }
 
     public void closeAction(MouseEvent mouseEvent) {
@@ -116,6 +123,8 @@ public class ViewBookInfo implements Initializable {
 
         googleID = book.getGoogleID();
         googleURL = book.getGoogleBooksInfoURL();
+
+        if (googleURL.equals("none")) googleLinkButton.setDisable(true);  // Disable if has no actual google link
 
         bookTitleLabel.setText(book.getTitle());
         bookTitleTopLabel.setText(book.getTitle());
