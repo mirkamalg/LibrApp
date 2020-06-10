@@ -123,8 +123,11 @@ public class ViewBookInfo implements Initializable {
 
         try {
             googleID = book.getGoogleID();
-        }catch (Exception ignored){}
-        googleURL = book.getGoogleBooksInfoURL();
+            googleURL = book.getGoogleBooksInfoURL();
+        }catch (Exception ignored){
+            googleID = "none";
+            googleURL = "none";
+        }
 
         if (googleURL.equals("none")) googleLinkButton.setDisable(true);  // Disable if has no actual google link
         if (googleID.equals("none")) googleIDButton.setDisable(true);     // Disable if has no actual google ID

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="637.0" prefWidth="845.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="AddBookToShelf">
+   <children>
+      <AnchorPane layoutY="80.0" prefHeight="0.0" prefWidth="845.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, #ffffe4);">
+         <children>
+            <Label layoutX="14.0" prefHeight="70.0" prefWidth="399.0" text="Add to bookshelf">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="791.0" layoutY="53.0" onMouseClicked="#closeAction" size="35" />
+      <ListView fx:id="allBooksListView" layoutX="24.0" layoutY="166.0" prefHeight="458.0" prefWidth="797.0" />
+   </children>
+</AnchorPane>

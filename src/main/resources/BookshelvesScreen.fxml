@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="728.0" prefWidth="963.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, transparent);" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Bookshelves">
+   <children>
+      <AnchorPane layoutY="70.0" prefHeight="100.0" prefWidth="963.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, #ffffe4);">
+         <children>
+            <Label layoutX="19.0" layoutY="10.0" text="Bookshelves">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+            <TextField fx:id="newBookShelfTextField" layoutX="506.0" layoutY="41.0" prefHeight="31.0" prefWidth="381.0" />
+            <Button layoutX="895.0" layoutY="41.0" mnemonicParsing="false" onAction="#addNewShelfAction" style="-fx-background-color: #ffe0b2; -fx-background-radius: 25 25 25 25;" text="Add" />
+         </children>
+      </AnchorPane>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="912.0" layoutY="46.0" onMouseClicked="#closeAction" size="35" />
+      <ListView fx:id="bookShelvesListView" layoutX="27.0" layoutY="214.0" onMouseClicked="#viewBookShelfAction" prefHeight="488.0" prefWidth="910.0" />
+   </children>
+</AnchorPane>

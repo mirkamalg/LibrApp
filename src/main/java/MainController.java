@@ -71,7 +71,21 @@ public class MainController implements Initializable {
     }
 
     public void bookshelvesAction(MouseEvent mouseEvent) {
+        Pane loadedPane = handler.changePane("BookshelvesScreen");
+        contentPane.getChildren().clear();
+        contentPane.getChildren().add(loadedPane);
 
+        bookshelvesLabel.setStyle("-fx-text-fill:  #29b6f6");  //  Colorize chosen one, reset others
+        bookshelvesIcon.setStyle("-fx-fill:  #29b6f6");
+
+        myBooksLabel.setStyle("");
+        myBooksIcon.setStyle("");
+
+        searchLabel.setStyle("");
+        searchIcon.setStyle("");
+
+        aboutLabel.setStyle("");
+        aboutIcon.setStyle("");
     }
 
     public void searchAction(MouseEvent mouseEvent) {
