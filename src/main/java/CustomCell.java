@@ -18,7 +18,7 @@ public class CustomCell extends ListCell<String> {
     public CustomCell() {
         super();
 
-        hBox.getChildren().addAll(img, title, button);
+        hBox.getChildren().addAll(img, button, title);
         hBox.setAlignment(Pos.CENTER_LEFT);
 
         img.setFitHeight(100);

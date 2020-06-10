@@ -121,7 +121,9 @@ public class ViewBookInfo implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Book book = DataHandler.getBooks().get(DataHandler.title);
 
-        googleID = book.getGoogleID();
+        try {
+            googleID = book.getGoogleID();
+        }catch (Exception ignored){}
         googleURL = book.getGoogleBooksInfoURL();
 
         if (googleURL.equals("none")) googleLinkButton.setDisable(true);  // Disable if has no actual google link

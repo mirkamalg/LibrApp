@@ -22,5 +22,6 @@
       </AnchorPane>
       <ListView fx:id="resultListView" layoutX="27.0" layoutY="214.0" onMouseClicked="#viewBookAction" prefHeight="488.0" prefWidth="910.0" />
       <FontAwesomeIconView glyphName="CLOSE" layoutX="912.0" layoutY="46.0" onMouseClicked="#closeAction" size="35" />
+      <ProgressBar fx:id="loadingBar" layoutX="286.0" layoutY="447.0" prefHeight="23.0" prefWidth="393.0" progress="0.0" visible="false" />
    </children>
 </AnchorPane>
