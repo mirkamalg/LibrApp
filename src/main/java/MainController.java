@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
 import java.io.ByteArrayInputStream;
@@ -50,6 +51,18 @@ public class MainController implements Initializable {
     @FXML
     private Pane contentPane;
 
+    @FXML
+    private HBox myBooksHBox;
+
+    @FXML
+    private HBox bookShelvesHBox;
+
+    @FXML
+    private HBox searchHBox;
+
+    @FXML
+    private HBox aboutHBox;
+
     private final TransitionHandler handler = new TransitionHandler();
 
     public void myBooksAction(MouseEvent mouseEvent) {
@@ -57,17 +70,21 @@ public class MainController implements Initializable {
         contentPane.getChildren().clear();
         contentPane.getChildren().add(loadedPane);
 
-        myBooksLabel.setStyle("-fx-text-fill:  #29b6f6");  //  Colorize chosen one, reset others
-        myBooksIcon.setStyle("-fx-fill:  #29b6f6");
+        myBooksLabel.setStyle("-fx-text-fill:  white");  //  Colorize chosen one, reset others
+        myBooksIcon.setStyle("-fx-fill:  white");
+        myBooksHBox.setStyle("-fx-background-color: #26c6da");
 
         bookshelvesLabel.setStyle("");
         bookshelvesIcon.setStyle("");
+        bookShelvesHBox.setStyle("");
 
         searchLabel.setStyle("");
         searchIcon.setStyle("");
+        searchHBox.setStyle("");
 
         aboutLabel.setStyle("");
         aboutIcon.setStyle("");
+        aboutHBox.setStyle("");
     }
 
     public void bookshelvesAction(MouseEvent mouseEvent) {
@@ -75,17 +92,21 @@ public class MainController implements Initializable {
         contentPane.getChildren().clear();
         contentPane.getChildren().add(loadedPane);
 
-        bookshelvesLabel.setStyle("-fx-text-fill: #26c6da");  //  Colorize chosen one, reset others
-        bookshelvesIcon.setStyle("-fx-fill:  #26c6da");
+        bookshelvesLabel.setStyle("-fx-text-fill: white");  //  Colorize chosen one, reset others
+        bookshelvesIcon.setStyle("-fx-fill:  white");
+        bookShelvesHBox.setStyle("-fx-background-color: #26c6da");
 
         myBooksLabel.setStyle("");
         myBooksIcon.setStyle("");
+        myBooksHBox.setStyle("");
 
         searchLabel.setStyle("");
         searchIcon.setStyle("");
+        searchHBox.setStyle("");
 
         aboutLabel.setStyle("");
         aboutIcon.setStyle("");
+        aboutHBox.setStyle("");
     }
 
     public void searchAction(MouseEvent mouseEvent) {
@@ -93,17 +114,21 @@ public class MainController implements Initializable {
         contentPane.getChildren().clear();
         contentPane.getChildren().add(loadedPane);
 
-        searchLabel.setStyle("-fx-text-fill:  #26c6da");  //  Colorize chosen one, reset others
-        searchIcon.setStyle("-fx-fill:  #26c6da");
+        searchLabel.setStyle("-fx-text-fill:  white");  //  Colorize chosen one, reset others
+        searchIcon.setStyle("-fx-fill:  white");
+        searchHBox.setStyle("-fx-background-color: #26c6da");
 
         bookshelvesLabel.setStyle("");
         bookshelvesIcon.setStyle("");
+        bookShelvesHBox.setStyle("");
 
         myBooksLabel.setStyle("");
         myBooksIcon.setStyle("");
+        myBooksHBox.setStyle("");
 
         aboutLabel.setStyle("");
         aboutIcon.setStyle("");
+        aboutHBox.setStyle("");
     }
 
     public void aboutAction(MouseEvent mouseEvent) {
@@ -111,17 +136,21 @@ public class MainController implements Initializable {
         contentPane.getChildren().clear();
         contentPane.getChildren().add(loadedPane);
 
-        aboutLabel.setStyle("-fx-text-fill:  #26c6da");  //  Colorize chosen one, reset others
-        aboutIcon.setStyle("-fx-fill:  #26c6da");
+        aboutLabel.setStyle("-fx-text-fill:  white");  //  Colorize chosen one, reset others
+        aboutIcon.setStyle("-fx-fill:  white");
+        aboutHBox.setStyle("-fx-background-color: #26c6da");
 
         bookshelvesLabel.setStyle("");
         bookshelvesIcon.setStyle("");
+        bookShelvesHBox.setStyle("");
 
         myBooksLabel.setStyle("");
         myBooksIcon.setStyle("");
+        myBooksHBox.setStyle("");
 
         searchLabel.setStyle("");
         searchIcon.setStyle("");
+        searchHBox.setStyle("");
     }
 
     @Override

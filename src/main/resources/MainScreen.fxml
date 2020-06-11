@@ -28,9 +28,9 @@
                   </Label>
                </children>
             </HBox>
-            <VBox layoutX="21.0" layoutY="248.0" prefHeight="210.0" prefWidth="277.0">
+            <VBox layoutY="254.0" prefHeight="212.0" prefWidth="319.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="217.0">
+                  <HBox fx:id="myBooksHBox" alignment="CENTER" prefHeight="53.0" prefWidth="217.0">
                      <children>
                         <FontAwesomeIconView fx:id="myBooksIcon" glyphName="BOOK" onMouseClicked="#myBooksAction" size="35" />
                         <Label fx:id="myBooksLabel" onMouseClicked="#myBooksAction" text="My books">
@@ -43,7 +43,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="236.0">
+                  <HBox fx:id="bookShelvesHBox" alignment="CENTER" prefHeight="53.0" prefWidth="236.0">
                      <children>
                         <FontAwesomeIconView fx:id="bookshelvesIcon" glyphName="BOOKMARK" onMouseClicked="#bookshelvesAction" size="35" />
                         <Label fx:id="bookshelvesLabel" onMouseClicked="#bookshelvesAction" prefHeight="53.0" prefWidth="205.0" text="Bookshelves">
@@ -56,7 +56,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="157.0">
+                  <HBox fx:id="searchHBox" alignment="CENTER" prefHeight="53.0" prefWidth="157.0">
                      <children>
                         <FontAwesomeIconView fx:id="searchIcon" glyphName="SEARCH" onMouseClicked="#searchAction" size="35" />
                         <Label fx:id="searchLabel" onMouseClicked="#searchAction" text="Search">
@@ -69,7 +69,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="148.0">
+                  <HBox fx:id="aboutHBox" alignment="CENTER" prefHeight="53.0" prefWidth="148.0">
                      <children>
                         <FontAwesomeIconView fx:id="aboutIcon" glyphName="INFO_CIRCLE" onMouseClicked="#aboutAction" size="35" />
                         <Label fx:id="aboutLabel" onMouseClicked="#aboutAction" text="About">
