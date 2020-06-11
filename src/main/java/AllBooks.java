@@ -3,6 +3,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
@@ -17,6 +18,9 @@ public class AllBooks implements Initializable {
 
     @FXML
     private ListView<String> allBooksListView;
+
+    @FXML
+    private Label noBooksLabel;
 
     static Stage stage;
 
@@ -39,9 +43,14 @@ public class AllBooks implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         allBooksListView.setCellFactory(param -> new CustomCell());
 
-        DataHandler.getBooks().forEach((title, book) -> {
-            allBooksListView.getItems().add(title);
-        });
+        if (DataHandler.getBooks().size() > 0) {
+            DataHandler.getBooks().forEach((title, book) -> {
+                allBooksListView.getItems().add(title);
+            });
+        } else {
+            allBooksListView.setVisible(false);
+            noBooksLabel.setVisible(true);
+        }
     }
 
     public void closeAction(MouseEvent mouseEvent) {

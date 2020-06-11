@@ -3,6 +3,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
@@ -17,8 +18,12 @@ import java.util.stream.Collectors;
 public class Reading implements Initializable {
 
     static Stage stage;
+
     @FXML
     private ListView<String> readingListView;
+
+    @FXML
+    private Label noBookLabel;
 
     static void initializeReadingScreen() throws IOException {
         stage = new Stage();
@@ -48,10 +53,15 @@ public class Reading implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         readingListView.setCellFactory(param -> new CustomCell());
 
-        DataHandler.getBooks().values().stream()         //  Getting books with value of "reading" and adding them to the listview
-                .filter(book -> book.getStatus().equals("reading"))
-                .collect(Collectors.toList()).forEach(book -> {
-            readingListView.getItems().add(book.getTitle());
-        });
+        if (DataHandler.getBooks().values().stream().anyMatch(book -> book.getStatus().equals("reading"))) {
+            DataHandler.getBooks().values().stream()         //  Getting books with value of "reading" and adding them to the listview
+                    .filter(book -> book.getStatus().equals("reading"))
+                    .collect(Collectors.toList()).forEach(book -> {
+                readingListView.getItems().add(book.getTitle());
+            });
+        } else {
+            readingListView.setVisible(false);
+            noBookLabel.setVisible(true);
+        }
     }
 }
