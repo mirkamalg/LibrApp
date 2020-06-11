@@ -43,7 +43,7 @@ public class AllBooks implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         allBooksListView.setCellFactory(param -> new CustomCell());
 
-        if (DataHandler.getBooks().size() > 0) {
+        if (!DataHandler.getBooks().isEmpty()) {
             DataHandler.getBooks().forEach((title, book) -> {
                 allBooksListView.getItems().add(title);
             });

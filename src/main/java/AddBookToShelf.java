@@ -22,8 +22,12 @@ import java.util.ResourceBundle;
 public class AddBookToShelf implements Initializable {
 
     static Stage stage;
+
     @FXML
     private ListView<String> allBooksListView;
+
+    @FXML
+    private Label noBooksLabel;
 
     static void initializeAddToShelfScreen() throws IOException {
         stage = new Stage();
@@ -47,11 +51,16 @@ public class AddBookToShelf implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //  Add book to listview (Not those which are already in this shelf)
-        DataHandler.getBooks().forEach((bookTitle, book) -> {
-            if (!Bookshelves.bookshelves.get(DataHandler.shelfName).contains(bookTitle)) {
-                allBooksListView.getItems().add(bookTitle);
-            }
-        });
+        if (!DataHandler.getBooks().isEmpty()) {
+            DataHandler.getBooks().forEach((bookTitle, book) -> {
+                if (!Bookshelves.bookshelves.get(DataHandler.shelfName).contains(bookTitle)) {
+                    allBooksListView.getItems().add(bookTitle);
+                }
+            });
+        } else {
+            allBooksListView.setVisible(false);
+            noBooksLabel.setVisible(true);
+        }
 
         allBooksListView.setCellFactory(param -> new CustomCell());
     }

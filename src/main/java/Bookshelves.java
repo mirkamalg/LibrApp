@@ -20,10 +20,15 @@ import java.util.ResourceBundle;
 public class Bookshelves implements Initializable {
 
     public static Map<String, ArrayList<String>> bookshelves = new HashMap<>();
+
     @FXML
     private ListView<String> bookShelvesListView;
+
     @FXML
     private TextField newBookShelfTextField;
+
+    @FXML
+    private Label noShelvesLabel;
 
     public static void saveBookShelves() throws IOException {
         Writer writer = new FileWriter("Bookshelves.json");
@@ -41,9 +46,14 @@ public class Bookshelves implements Initializable {
         try {
             loadBookShelves();
 
-            bookshelves.forEach((bookShelveName, bookTitle) -> {
-                bookShelvesListView.getItems().add(bookShelveName);
-            });
+            if (!bookshelves.isEmpty()) {
+                bookshelves.forEach((bookShelveName, bookTitle) -> {
+                    bookShelvesListView.getItems().add(bookShelveName);
+                });
+            } else {
+                bookShelvesListView.setVisible(false);
+                noShelvesLabel.setVisible(true);
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -77,6 +87,10 @@ public class Bookshelves implements Initializable {
                 bookShelvesListView.getItems().add(newBookShelfTextField.getText());
 
                 bookshelves.put(newBookShelfTextField.getText(), new ArrayList<>());
+
+                bookShelvesListView.setVisible(true);
+                noShelvesLabel.setVisible(false);
+
                 saveBookShelves();
             } else {
                 newBookShelfTextField.setText("Already exists!");
@@ -100,6 +114,11 @@ public class Bookshelves implements Initializable {
                 String item = getItem();
                 getListView().getItems().remove(item);
                 Bookshelves.bookshelves.remove(item);
+
+                if (bookshelves.isEmpty()) {
+                    bookShelvesListView.setVisible(false);
+                    noShelvesLabel.setVisible(true);
+                }
 
                 try {
                     Bookshelves.saveBookShelves();

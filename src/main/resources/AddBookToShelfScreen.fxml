@@ -18,5 +18,10 @@
       </AnchorPane>
       <FontAwesomeIconView glyphName="CLOSE" layoutX="791.0" layoutY="53.0" onMouseClicked="#closeAction" size="35" />
       <ListView fx:id="allBooksListView" layoutX="24.0" layoutY="166.0" prefHeight="458.0" prefWidth="797.0" />
+      <Label fx:id="noBooksLabel" layoutX="128.0" layoutY="378.0" text="You don't have any books. Create one or search and add." visible="false">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="728.0" prefWidth="963.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Bookshelves">
@@ -22,5 +19,10 @@
       </AnchorPane>
       <FontAwesomeIconView glyphName="CLOSE" layoutX="912.0" layoutY="46.0" onMouseClicked="#closeAction" size="35" />
       <ListView fx:id="bookShelvesListView" layoutX="27.0" layoutY="214.0" onMouseClicked="#viewBookShelfAction" prefHeight="488.0" prefWidth="910.0" />
+      <Label fx:id="noShelvesLabel" layoutX="267.0" layoutY="441.0" text="You don't have any bookshelves, add one." visible="false">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

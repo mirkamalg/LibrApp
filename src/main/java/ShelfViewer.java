@@ -24,10 +24,18 @@ import java.util.ResourceBundle;
 public class ShelfViewer implements Initializable {
 
     static Stage stage;
+
     @FXML
     private ListView<String> booksListView;
+
     @FXML
     private Label bookShelfName;
+
+    @FXML
+    private Label noBookLabel1;
+
+    @FXML
+    private Label noBookLabel2;
 
     static void initializeViewShelfScreen() throws IOException {
         stage = new Stage();
@@ -64,14 +72,20 @@ public class ShelfViewer implements Initializable {
         bookShelfName.setText(DataHandler.shelfName);
 
         ArrayList<String> removedList = new ArrayList<>();  //  Collect removed books here, and then delete them from Bookshelves.json
-        Bookshelves.bookshelves.get(DataHandler.shelfName).forEach((bookTitle) -> {
+        if (Bookshelves.bookshelves.get(DataHandler.shelfName).size() > 0) {
+            Bookshelves.bookshelves.get(DataHandler.shelfName).forEach((bookTitle) -> {
 
-            if (DataHandler.getBooks().containsKey(bookTitle)) {        //  Add book only if it actually exists (not removed after being added to this shelf)
-                booksListView.getItems().add(bookTitle);
-            } else {
-                removedList.add(bookTitle);
-            }
-        });
+                if (DataHandler.getBooks().containsKey(bookTitle)) {        //  Add book only if it actually exists (not removed after being added to this shelf)
+                    booksListView.getItems().add(bookTitle);
+                } else {
+                    removedList.add(bookTitle);
+                }
+            });
+        } else {
+            booksListView.setVisible(false);
+            noBookLabel1.setVisible(true);
+            noBookLabel2.setVisible(true);
+        }
 
         //  Remove junk books from json here
         removedList.forEach((bookTitle) -> {
