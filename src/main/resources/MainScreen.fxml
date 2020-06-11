@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
@@ -100,21 +100,22 @@
       </AnchorPane>
       <Pane fx:id="contentPane" layoutX="319.0" layoutY="-8.0" prefHeight="728.0" prefWidth="963.0" style="-fx-background-color: #26c6da;">
          <children>
-            <Label layoutX="419.0" layoutY="284.0" text="Hello" textFill="WHITE">
+            <Label fx:id="helloLabel" layoutX="419.0" layoutY="284.0" onMouseClicked="#animateHello" opacity="0.0" text="Hello" textFill="WHITE">
                <font>
                   <Font name="Forte" size="96.0" />
                </font>
             </Label>
-            <Label layoutX="172.0" layoutY="400.0" text="Welcome to LibrApp, Stranger!" textFill="WHITE">
+            <Label fx:id="welcomeLabel" layoutX="172.0" layoutY="400.0" onMouseClicked="#animateWelcome" opacity="0.0" text="Welcome to LibrApp, Stranger!" textFill="WHITE">
                <font>
                   <Font name="Forte" size="48.0" />
                </font>
             </Label>
-            <ImageView fitHeight="108.0" fitWidth="116.0" layoutX="290.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logo" fitHeight="108.0" fitWidth="116.0" layoutX="290.0" layoutY="284.0" onMouseClicked="#animateLogo" opacity="0.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Pics/librarylogowhite.png" />
                </image>
             </ImageView>
+            <FontAwesomeIconView glyphName="CLOSE" layoutX="911.0" layoutY="47.0" onMouseClicked="#closeAction" size="35" style="-fx-fill: white;" />
          </children></Pane>
    </children>
 </AnchorPane>

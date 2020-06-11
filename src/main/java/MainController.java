@@ -1,11 +1,18 @@
+import animatefx.animation.FadeInLeft;
+import animatefx.animation.FadeInRight;
+import animatefx.animation.Swing;
+import animatefx.animation.Tada;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -60,6 +67,15 @@ public class MainController implements Initializable {
 
     @FXML
     private HBox aboutHBox;
+
+    @FXML
+    private Label helloLabel;
+
+    @FXML
+    private Label welcomeLabel;
+
+    @FXML
+    private ImageView logo;
 
     private final TransitionHandler handler = new TransitionHandler();
 
@@ -155,7 +171,13 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         //  Animations
+        new FadeInLeft(logo).setSpeed(0.7)
+                .playOnFinished(new FadeInRight(helloLabel).setSpeed(0.7)).play();
 
+        FadeTransition ft = new FadeTransition(Duration.millis(3000), welcomeLabel);
+        ft.setFromValue(0.0);
+        ft.setToValue(1.0);
+        ft.play();
 
 
         DataBase dataBase = new DataBase();  //Load book data from SQLite database
@@ -209,5 +231,21 @@ public class MainController implements Initializable {
         }
         if (!f.delete())
             throw new FileNotFoundException("Failed to delete file: " + f);
+    }
+
+    public void closeAction(MouseEvent mouseEvent) {
+        System.exit(0);
+    }
+
+    public void animateHello(MouseEvent mouseEvent) {
+        new Tada(helloLabel).setSpeed(0.7).play();
+    }
+
+    public void animateWelcome(MouseEvent mouseEvent) {
+        new Swing(welcomeLabel).setSpeed(0.7).play();
+    }
+
+    public void animateLogo(MouseEvent mouseEvent) {
+        new Tada(logo).setSpeed(0.7).play();
     }
 }
