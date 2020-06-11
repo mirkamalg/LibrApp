@@ -1,10 +1,8 @@
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -154,10 +152,7 @@ public class MainController implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {  //  Clicks automatically on my books when app runs
-        Event.fireEvent(myBooksLabel, new MouseEvent(MouseEvent.MOUSE_CLICKED, 0,
-                0, 0, 0, MouseButton.PRIMARY, 1, true, true, true, true,
-                true, true, true, true, true, true, null));
+    public void initialize(URL location, ResourceBundle resources) {
 
         DataBase dataBase = new DataBase();  //Load book data from SQLite database
         ResultSet rs;
