@@ -19,9 +19,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -194,25 +192,6 @@ public class ViewSearchResultBook implements Initializable {
             matureContentIcon.setGlyphName("WARNING");
             matureContentIcon.setStyle("-fx-fill: orange");
         }
-    }
-
-    private File bytesToFile(byte[] bytes) {
-        File file = new File("");
-
-        try {
-
-            OutputStream outputStream = new FileOutputStream(file);
-
-            outputStream.write(bytes);
-
-            outputStream.close();
-        }
-
-        catch (Exception e) {
-            System.out.println("Exception: " + e);
-        }
-
-        return file;
     }
 
     private void copy(String copiedText) {

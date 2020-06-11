@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -8,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="637.0" prefWidth="845.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="AddBookToShelf">
    <children>
-      <AnchorPane layoutY="80.0" prefHeight="0.0" prefWidth="845.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, #ffffe4);">
+      <AnchorPane layoutY="80.0" prefHeight="0.0" prefWidth="845.0" style="-fx-background-color: #fafafa;">
          <children>
             <Label layoutX="14.0" prefHeight="70.0" prefWidth="399.0" text="Add to bookshelf">
                <font>

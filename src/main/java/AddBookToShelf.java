@@ -66,7 +66,7 @@ public class AddBookToShelf implements Initializable {
 
             hBox.getChildren().addAll(button, title);
             hBox.setAlignment(Pos.CENTER_LEFT);
-            button.setStyle("-fx-background-radius: 25 25 25 25; -fx-background-color:  #ffe0b2");
+            button.setStyle("-fx-background-radius: 25 25 25 25; -fx-background-color:  #26c6da");
 
             button.setOnAction(event -> {
                 String item = getItem();

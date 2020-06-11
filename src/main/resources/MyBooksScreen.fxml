@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane fx:id="myBooksPane" prefHeight="728.0" prefWidth="963.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, transparent);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyBooksController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="myBooksPane" prefHeight="728.0" prefWidth="963.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="MyBooksController">
    <children>
       <GridPane alignment="CENTER" hgap="30.0" layoutX="13.0" layoutY="183.0" prefHeight="531.0" prefWidth="920.0">
         <columnConstraints>
@@ -76,7 +76,7 @@
          </children>
       </GridPane>
       <FontAwesomeIconView glyphName="CLOSE" layoutX="912.0" layoutY="46.0" onMouseClicked="#closeAction" size="35" />
-      <HBox layoutY="70.0" prefHeight="100.0" prefWidth="963.0" style="-fx-background-color: linear-gradient(to right, #e1f5fe, #ffffe4);">
+      <HBox layoutY="70.0" prefHeight="100.0" prefWidth="963.0" style="-fx-background-color: #fafafa;">
          <children>
             <Label text="My books">
                <font>
@@ -86,7 +86,7 @@
                   <Insets left="20.0" />
                </HBox.margin>
             </Label>
-            <Button fx:id="addNewBookButton" mnemonicParsing="false" onAction="#addNewBookAction" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffe0b2;" text="Add new book">
+            <Button fx:id="addNewBookButton" mnemonicParsing="false" onAction="#addNewBookAction" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #26c6da;" text="Add new book">
                <HBox.margin>
                   <Insets left="500.0" top="35.0" />
                </HBox.margin>

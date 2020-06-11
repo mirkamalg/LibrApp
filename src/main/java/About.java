@@ -16,6 +16,6 @@ public class About {
             public void start(Stage primaryStage) throws Exception {
                 // keep empty
             }
-        }).showDocument("REPO LINK HERE");
+        }).showDocument("https://github.com/Re1r0/LibrApp");
     }
 }

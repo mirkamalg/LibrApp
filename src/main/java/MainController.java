@@ -75,8 +75,8 @@ public class MainController implements Initializable {
         contentPane.getChildren().clear();
         contentPane.getChildren().add(loadedPane);
 
-        bookshelvesLabel.setStyle("-fx-text-fill:  #29b6f6");  //  Colorize chosen one, reset others
-        bookshelvesIcon.setStyle("-fx-fill:  #29b6f6");
+        bookshelvesLabel.setStyle("-fx-text-fill: #26c6da");  //  Colorize chosen one, reset others
+        bookshelvesIcon.setStyle("-fx-fill:  #26c6da");
 
         myBooksLabel.setStyle("");
         myBooksIcon.setStyle("");
@@ -93,8 +93,8 @@ public class MainController implements Initializable {
         contentPane.getChildren().clear();
         contentPane.getChildren().add(loadedPane);
 
-        searchLabel.setStyle("-fx-text-fill:  #29b6f6");  //  Colorize chosen one, reset others
-        searchIcon.setStyle("-fx-fill:  #29b6f6");
+        searchLabel.setStyle("-fx-text-fill:  #26c6da");  //  Colorize chosen one, reset others
+        searchIcon.setStyle("-fx-fill:  #26c6da");
 
         bookshelvesLabel.setStyle("");
         bookshelvesIcon.setStyle("");
@@ -111,8 +111,8 @@ public class MainController implements Initializable {
         contentPane.getChildren().clear();
         contentPane.getChildren().add(loadedPane);
 
-        aboutLabel.setStyle("-fx-text-fill:  #29b6f6");  //  Colorize chosen one, reset others
-        aboutIcon.setStyle("-fx-fill:  #29b6f6");
+        aboutLabel.setStyle("-fx-text-fill:  #26c6da");  //  Colorize chosen one, reset others
+        aboutIcon.setStyle("-fx-fill:  #26c6da");
 
         bookshelvesLabel.setStyle("");
         bookshelvesIcon.setStyle("");

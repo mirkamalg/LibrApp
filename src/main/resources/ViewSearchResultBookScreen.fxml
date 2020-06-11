@@ -10,7 +10,7 @@
 <?import javafx.scene.text.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="657.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="ViewSearchResultBook">
    <children>
-      <AnchorPane layoutY="74.0" prefHeight="96.0" prefWidth="1094.0" style="-fx-background-color: linear-gradient(to right, #ffccbc, transparent);">
+      <AnchorPane layoutY="74.0" prefHeight="96.0" prefWidth="1094.0" style="-fx-background-color: #26c6da;">
          <children>
             <Label fx:id="bookTitleTopLabel" layoutX="17.0" layoutY="19.0" text="Book title">
                <font>
@@ -124,7 +124,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="googleLinkButton" layoutX="652.0" layoutY="393.0" mnemonicParsing="false" onAction="#googleLinkAction" prefHeight="45.0" prefWidth="221.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffccbc;" text="Copy book's google page URL" />
+      <Button fx:id="googleLinkButton" layoutX="652.0" layoutY="393.0" mnemonicParsing="false" onAction="#googleLinkAction" prefHeight="45.0" prefWidth="221.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #26c6da;" text="Copy book's google page URL" />
       <FontAwesomeIconView glyphName="CLOSE" layoutX="1027.0" layoutY="44.0" onMouseClicked="#closeAction" size="35" />
       <Label fx:id="matureContentLabel" layoutX="671.0" layoutY="299.0" text="No">
          <font>
@@ -146,9 +146,9 @@
             </Label>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                <children>
-                  <Button fx:id="addWantToReadButton" mnemonicParsing="false" onAction="#addWantToReadAction" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffccbc;" text="Want to read" />
-                  <Button fx:id="addReadingButton" mnemonicParsing="false" onAction="#addReadingAction" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffccbc;" text="Reading" />
-                  <Button fx:id="addHaveReadButton" mnemonicParsing="false" onAction="#addHaveReadAction" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffccbc;" text="Have read" />
+                  <Button fx:id="addWantToReadButton" mnemonicParsing="false" onAction="#addWantToReadAction" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #26c6da;" text="Want to read" />
+                  <Button fx:id="addReadingButton" mnemonicParsing="false" onAction="#addReadingAction" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #26c6da;" text="Reading" />
+                  <Button fx:id="addHaveReadButton" mnemonicParsing="false" onAction="#addHaveReadAction" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #26c6da;" text="Have read" />
                </children>
             </HBox>
          </children>

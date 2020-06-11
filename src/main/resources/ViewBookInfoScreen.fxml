@@ -8,7 +8,7 @@
 <?import javafx.scene.text.*?>
 <AnchorPane prefHeight="657.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewBookInfo">
    <children>
-      <AnchorPane layoutY="74.0" prefHeight="96.0" prefWidth="1094.0" style="-fx-background-color: linear-gradient(to right, #ffccbc, transparent);">
+      <AnchorPane layoutY="74.0" prefHeight="96.0" prefWidth="1094.0" style="-fx-background-color: #26c6da;">
          <children>
             <Label fx:id="bookTitleTopLabel" layoutX="17.0" layoutY="19.0" text="Book title">
                <font>
@@ -22,7 +22,7 @@
             <Image url="@Pics/question-mark.png" />
          </image>
       </ImageView>
-      <Label fx:id="bookTitleLabel" layoutX="190.0" layoutY="200.0" text="Book title">
+      <Label fx:id="bookTitleLabel" layoutX="190.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="449.0" text="Book title">
          <font>
             <Font size="24.0" />
          </font>
@@ -32,7 +32,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="authorNameLabel1" layoutX="190.0" layoutY="251.0" text="Author name">
+      <Label fx:id="authorNameLabel1" layoutX="190.0" layoutY="251.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="449.0" text="Author name">
          <font>
             <Font size="24.0" />
          </font>
@@ -42,7 +42,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="authorNameLabel2" layoutX="191.0" layoutY="302.0" text="Author name">
+      <Label fx:id="authorNameLabel2" layoutX="191.0" layoutY="302.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="449.0" text="Author name">
          <font>
             <Font size="24.0" />
          </font>
@@ -52,7 +52,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="publisherNameLabel" layoutX="191.0" layoutY="353.0" text="Publisher name">
+      <Label fx:id="publisherNameLabel" layoutX="191.0" layoutY="353.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="449.0" text="Publisher name">
          <font>
             <Font size="24.0" />
          </font>
@@ -62,7 +62,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="publishDateLabel" layoutX="190.0" layoutY="404.0" text="Publish date">
+      <Label fx:id="publishDateLabel" layoutX="190.0" layoutY="404.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="449.0" text="Publish date">
          <font>
             <Font size="24.0" />
          </font>
@@ -72,7 +72,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="averageRatingLabel" layoutX="190.0" layoutY="455.0" text="Average rating">
+      <Label fx:id="averageRatingLabel" layoutX="190.0" layoutY="455.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="449.0" text="Average rating">
          <font>
             <Font size="24.0" />
          </font>
@@ -82,7 +82,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="languageLabel" layoutX="190.0" layoutY="506.0" text="Language">
+      <Label fx:id="languageLabel" layoutX="190.0" layoutY="506.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="449.0" text="Language">
          <font>
             <Font size="24.0" />
          </font>
@@ -102,7 +102,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="descriptionLabel" alignment="TOP_LEFT" layoutX="190.0" layoutY="558.0" prefHeight="96.0" prefWidth="885.0" text="Description" wrapText="true">
+      <Label fx:id="descriptionLabel" alignment="TOP_LEFT" layoutX="190.0" layoutY="558.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="96.0" prefWidth="885.0" text="Description" wrapText="true">
          <font>
             <Font name="System Italic" size="20.0" />
          </font>
@@ -122,8 +122,8 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="googleIDButton" layoutX="649.0" layoutY="393.0" mnemonicParsing="false" onAction="#googleIDAction" prefHeight="45.0" prefWidth="170.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffccbc;" text="Copy book's GoogleID" />
-      <Button fx:id="googleLinkButton" layoutX="651.0" layoutY="451.0" mnemonicParsing="false" onAction="#googleLinkAction" prefHeight="45.0" prefWidth="195.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #ffccbc;" text="Open book's google page" />
+      <Button fx:id="googleIDButton" layoutX="649.0" layoutY="393.0" mnemonicParsing="false" onAction="#googleIDAction" prefHeight="45.0" prefWidth="170.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #26c6da;" text="Copy book's GoogleID" />
+      <Button fx:id="googleLinkButton" layoutX="651.0" layoutY="451.0" mnemonicParsing="false" onAction="#googleLinkAction" prefHeight="45.0" prefWidth="195.0" style="-fx-background-radius: 25 25 25 25; -fx-background-color: #26c6da;" text="Open book's google page" />
       <FontAwesomeIconView glyphName="CLOSE" layoutX="1027.0" layoutY="44.0" onMouseClicked="#closeAction" size="35" />
       <Label fx:id="statusLabel" layoutX="649.0" layoutY="304.0" text="Status">
          <font>
