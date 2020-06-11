@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -91,7 +92,15 @@ public class Bookshelves implements Initializable {
                 bookShelvesListView.setVisible(true);
                 noShelvesLabel.setVisible(false);
 
-                saveBookShelves();
+                Task saveTask = new Task() {   //  Use multithreading to prevent minor UI stutters
+                    @Override
+                    protected Object call() throws Exception {
+                        saveBookShelves();
+
+                        return null;
+                    }
+                };
+                new Thread(saveTask).start();
             } else {
                 newBookShelfTextField.setText("Already exists!");
             }

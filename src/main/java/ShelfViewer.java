@@ -111,6 +111,12 @@ public class ShelfViewer implements Initializable {
             booksListView.getItems().add(bookTitle);
         });
 
+        if (!Bookshelves.bookshelves.get(DataHandler.shelfName).isEmpty()) {
+            booksListView.setVisible(true);
+            noBookLabel1.setVisible(false);
+            noBookLabel2.setVisible(false);
+        }
+
         Bookshelves.saveBookShelves();
     }
 
