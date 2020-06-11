@@ -188,10 +188,18 @@ public class AddNewBook implements Initializable {
             else if (readingToggle.isSelected()) status = "reading";
             else if (haveReadToggle.isSelected()) status = "haveRead";
 
+            Image image;
+            try {
+                image = new Image("file:" + selectedFile.getAbsolutePath());
+            } catch (Exception e) {
+                image = new Image("Pics/question-mark.png");
+                selectedFile = new File("src/main/resources/Pics/question-mark.png");
+            }
+
             Book addedBook = new Book("none", bookTitle, publisher,
                     publishDate, description, language,
                     "none", pageCount, 0,
-                    hasMatureContent, authors, categories, images, status, new Image("file:" + selectedFile.getAbsolutePath()));
+                    hasMatureContent, authors, categories, images, status, image);
 
             DataHandler.getBooks().put(bookTitle, addedBook);
 
