@@ -35,6 +35,9 @@ public class Search implements Initializable {
     @FXML
     private TextField publisherNameTextField;
 
+    @FXML
+    private Label searchBookLabel;
+
     static Map<String, Book> books = new HashMap<>();
 
     @FXML
@@ -84,12 +87,16 @@ public class Search implements Initializable {
                             books.forEach((bookTitle, book) -> {
                                 resultListView.getItems().add(bookTitle);
                             });
+
+                            resultListView.setVisible(true);
                         }
                     });
 
                     return null;
                 }
             };
+
+            searchBookLabel.setVisible(false);
 
             loadingBar.setVisible(true);
             loadingBar.progressProperty().bind(task.progressProperty());
