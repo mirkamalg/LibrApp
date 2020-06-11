@@ -28,62 +28,74 @@
                   </Label>
                </children>
             </HBox>
-            <VBox layoutY="254.0" prefHeight="212.0" prefWidth="319.0">
+            <HBox fx:id="myBooksHBox" alignment="CENTER_LEFT" layoutY="217.0" prefHeight="53.0" prefWidth="319.0">
                <children>
-                  <HBox fx:id="myBooksHBox" alignment="CENTER" prefHeight="53.0" prefWidth="217.0">
-                     <children>
-                        <FontAwesomeIconView fx:id="myBooksIcon" glyphName="BOOK" onMouseClicked="#myBooksAction" size="35" />
-                        <Label fx:id="myBooksLabel" onMouseClicked="#myBooksAction" text="My books">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="15.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox fx:id="bookShelvesHBox" alignment="CENTER" prefHeight="53.0" prefWidth="236.0">
-                     <children>
-                        <FontAwesomeIconView fx:id="bookshelvesIcon" glyphName="BOOKMARK" onMouseClicked="#bookshelvesAction" size="35" />
-                        <Label fx:id="bookshelvesLabel" onMouseClicked="#bookshelvesAction" prefHeight="53.0" prefWidth="205.0" text="Bookshelves">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="15.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox fx:id="searchHBox" alignment="CENTER" prefHeight="53.0" prefWidth="157.0">
-                     <children>
-                        <FontAwesomeIconView fx:id="searchIcon" glyphName="SEARCH" onMouseClicked="#searchAction" size="35" />
-                        <Label fx:id="searchLabel" onMouseClicked="#searchAction" text="Search">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="15.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox fx:id="aboutHBox" alignment="CENTER" prefHeight="53.0" prefWidth="148.0">
-                     <children>
-                        <FontAwesomeIconView fx:id="aboutIcon" glyphName="INFO_CIRCLE" onMouseClicked="#aboutAction" size="35" />
-                        <Label fx:id="aboutLabel" onMouseClicked="#aboutAction" text="About">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="15.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                  </HBox>
+                  <FontAwesomeIconView fx:id="myBooksIcon" glyphName="BOOK" onMouseClicked="#myBooksAction" size="35">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <Label fx:id="myBooksLabel" onMouseClicked="#myBooksAction" text="My books">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
                </children>
-            </VBox>
+            </HBox>
+            <HBox fx:id="bookShelvesHBox" alignment="CENTER_LEFT" layoutY="270.0" prefHeight="53.0" prefWidth="319.0">
+               <children>
+                  <FontAwesomeIconView fx:id="bookshelvesIcon" glyphName="BOOKMARK" onMouseClicked="#bookshelvesAction" size="35">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <Label fx:id="bookshelvesLabel" onMouseClicked="#bookshelvesAction" prefHeight="53.0" prefWidth="205.0" text="Bookshelves">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="searchHBox" alignment="CENTER_LEFT" layoutY="323.0" prefHeight="53.0" prefWidth="319.0">
+               <children>
+                  <FontAwesomeIconView fx:id="searchIcon" glyphName="SEARCH" onMouseClicked="#searchAction" size="35">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <Label fx:id="searchLabel" onMouseClicked="#searchAction" text="Search">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="aboutHBox" alignment="CENTER_LEFT" layoutY="376.0" prefHeight="53.0" prefWidth="319.0">
+               <children>
+                  <FontAwesomeIconView fx:id="aboutIcon" glyphName="INFO_CIRCLE" onMouseClicked="#aboutAction" size="35">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <Label fx:id="aboutLabel" onMouseClicked="#aboutAction" text="About">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
       <Pane fx:id="contentPane" layoutX="319.0" layoutY="-8.0" prefHeight="728.0" prefWidth="963.0" style="-fx-background-color: #26c6da;">
