@@ -170,6 +170,9 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        //Get username for greeting
+        welcomeLabel.setText("Welcome to LibrApp, " + System.getProperty("user.name") + "!");
+
         //  Animations
         new FadeInLeft(logo).setSpeed(0.7)
                 .playOnFinished(new FadeInRight(helloLabel).setSpeed(0.7)).play();
